@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ZoomInImageWhenPullingDown" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="ds1-Cp-WJZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1n9-HX-Mz8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9g6-cF-LAk" userLabel="Container">
+                                        <rect key="frame" x="0.0" y="600" width="375" height="2000"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Put your view here." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIB-gv-EGQ">
+                                                <rect key="frame" x="8" y="93" width="359" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdx-vz-kOD">
+                                                <rect key="frame" x="166" y="442" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lv-h8-BeN">
+                                                <rect key="frame" x="164" y="747" width="46" height="30"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xbm-j7-Pgp">
+                                                <rect key="frame" x="127" y="1033" width="121" height="29"/>
+                                                <segments>
+                                                    <segment title="First"/>
+                                                    <segment title="Second"/>
+                                                </segments>
+                                            </segmentedControl>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oM3-F0-Aea">
+                                                <rect key="frame" x="163" y="1210" width="51" height="31"/>
+                                            </switch>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ysC-Mp-Lu1">
+                                                <rect key="frame" x="177" y="1578" width="20" height="20"/>
+                                            </activityIndicatorView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You can't find me." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rE-he-gY3">
+                                                <rect key="frame" x="119" y="1979" width="137" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2000" id="jWm-qM-b9U"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="9g6-cF-LAk" firstAttribute="centerX" secondItem="1n9-HX-Mz8" secondAttribute="centerX" id="F8u-ic-X0G"/>
+                                    <constraint firstAttribute="bottom" secondItem="9g6-cF-LAk" secondAttribute="bottom" constant="-20" id="SlB-Ea-8kl"/>
+                                    <constraint firstItem="9g6-cF-LAk" firstAttribute="top" secondItem="1n9-HX-Mz8" secondAttribute="top" constant="600" id="cNu-DU-Hli"/>
+                                    <constraint firstAttribute="trailing" secondItem="9g6-cF-LAk" secondAttribute="trailing" id="f7w-9g-7zQ"/>
+                                    <constraint firstItem="9g6-cF-LAk" firstAttribute="width" secondItem="1n9-HX-Mz8" secondAttribute="width" id="xyc-FW-dZx"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1n9-HX-Mz8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="6RI-1V-w4y"/>
+                            <constraint firstItem="ds1-Cp-WJZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="IVQ-jf-X8C"/>
+                            <constraint firstItem="1n9-HX-Mz8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="SHD-h0-sU5"/>
+                            <constraint firstItem="ds1-Cp-WJZ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="n9a-vO-vqa"/>
+                            <constraint firstItem="1n9-HX-Mz8" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="oi3-X2-ihx"/>
+                            <constraint firstItem="ds1-Cp-WJZ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="pek-8f-4VI"/>
+                            <constraint firstItem="1n9-HX-Mz8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rAd-SN-Rze"/>
+                            <constraint firstItem="ds1-Cp-WJZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tpV-xp-DMR"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imageView" destination="ds1-Cp-WJZ" id="Z6O-ZK-0ve"/>
+                        <outlet property="scrollView" destination="1n9-HX-Mz8" id="r8q-zd-t2l"/>
+                        <outlet property="topOffset" destination="cNu-DU-Hli" id="lyu-Yw-Vkd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="242.5" y="339.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="test" width="1024" height="576"/>
+    </resources>
+</document>
