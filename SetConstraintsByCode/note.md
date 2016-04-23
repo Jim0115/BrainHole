@@ -77,4 +77,5 @@ Swift：
 >If you want to use Auto Layout to dynamically calculate the size and position of your view, you must set this property to NO, and then provide a non ambiguous, nonconflicting set of constraints for the view.
 
 ### Problems
-在向IB生成的View中直接添加约束时，将导致约束冲突。原因在于IB会向View中添加自动生成的约束条件。因此在对这种View添加约束时应该先使用IB添加对应的约束，之后勾选约束的`PlaceHolder`选项，将自动生成的约束在构建时移除。即可使代码添加的约束生效。
+在向IB生成的View中直接添加约束时，将导致约束冲突。原因在于IB会向View中添加自动生成的约束条件。因此在对这种View添加约束时应该先使用IB添加对应的约束，之后勾选约束的`PlaceHolder`选项，将自动生成的约束在构建时移除。即可使代码添加的约束生效。  
+**高度和宽度应该添加到需要约束的View，位置信息应该添加到父视图**
