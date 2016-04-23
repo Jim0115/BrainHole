@@ -25,8 +25,6 @@ class ViewController: UIViewController {
     }
     
     addConstraints()
-    
-    title = "Autolayout by code"
   
   }
 
