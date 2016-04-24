@@ -151,6 +151,38 @@ Objective-C:
 `views`：一个字典，用于获取VFL中出现的View。无对应值同样可能导致Crash。
 >A dictionary of views that appear in the visual format string. The keys must be the string values used in the visual format string, and the values must be the view objects.
 
+![image](http://www.raywenderlich.com/wp-content/uploads/2015/07/VisualFormatLanguageOptionsImage.png)
+
+### Step
+
+1. Direction of your constraints, not required. Can have the following values:
+    * H: indicates horizontal orientation.
+    * V: indicates vertical orientation.
+    * Not specified: Auto Layout defaults to horizontal orientation.
+2. Leading connection to the superview, not required.
+    * Spacing between the top edge of your view and its superview’s top edge (vertical)
+    * Spacing between the leading edge of your view and its superview’s leading edge (horizontal)
+3. View you’re laying out, is required.
+4. Connection to another view, not required.
+5. Trailing connection to the superview, not required.
+    * Spacing between the bottom edge of your view and its superview’s bottom edge (vertical)
+    * Spacing between the trailing edge of your view and its superview’s trailing edge (horizontal)
+    
+### Available Symbols
+* `|` superview
+* `-` standard spacing (usually 8 points; value can be changed if it is the spacing to the edge of a superview)
+* `==` equal widths (can be omitted忽略)
+* `-20-` non standard spacing (20 points)
+* `<=` less than or equal to
+* `>=` greater than or equal to
+* `@250` priority of the constraint; can have any value between 0 and 1000
+    * `250` - low priority
+    * `750` - high priority
+    * `1000` - required priority
+    
+### Example Format String
+    H:|-[icon(==iconDate)]-20-[iconLabel(120@250)]-20@750-[iconDate(>=50)]-|
+
 Example：  
 实现四个等大的正方形View水平排列在SuperView水平中心
 
