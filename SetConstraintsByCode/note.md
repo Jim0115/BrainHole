@@ -183,7 +183,43 @@ Objective-C:
 ### Example Format String
     H:|-[icon(==iconDate)]-20-[iconLabel(120@250)]-20@750-[iconDate(>=50)]-|
 
+    // 竖直方向 iconImageView高度为30 与上边界距离为20（状态栏）
+    let iconVerticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|-20-[iconImageView(30)]", options: [], metrics: nil, views: views)
+    
+    // 水平方向 iconImageView宽度为30 与左边界距离为15 三个控件标准间隔 skipButton与右边界距离15
+    let topRowHorizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-15-[iconImageView(30)]-[appNameLabel]-[skipButton]-15-|", options: [.AlignAllCenterY], metrics: nil, views: views)
+    
+    // 水平方向 summaryLabel与左右边界间隔15
+    let summaryHorizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-15-[summaryLabel]-15-|", options: [], metrics: nil, views: views)
+    
+    // 水平方向 welcomeLabel与左右边界间隔15
+    let welcomeHorizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-15-[welcomeLabel]-15-|", options: [], metrics: nil, views: views)
+    
+    // 竖直方向 iconImageView与appImageView距离为10
+    let iconToImageVerticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[iconImageView]-10-[appImageView]", options: [], metrics: nil, views: views)
+    
+    // 竖直方向 appImageView与welcomeLabel距离为10，中心对齐
+    let imageToWelcomeConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[appImageView]-10-[welcomeLabel]", options: [.AlignAllCenterX], metrics: nil, views: views)
+    
+    // 竖直方向 summaryLabel与welcomeLabel距离为4，前后对齐
+    let summaryLabelVerticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[welcomeLabel]-4-[summaryLabel]", options: [.AlignAllLeading, .AlignAllTrailing], metrics: nil, views: views)
+    
+    // 竖直方向 summaryLabel与pageControl距离为15 中心对齐 pageControl高度为9 与底边距离为15
+    let summaryToPageVerticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[summaryLabel]-15-[pageControl(9)]-15-|", options: [.AlignAllCenterX], metrics: nil, views: views)
+
 Example：  
 实现四个等大的正方形View水平排列在SuperView水平中心
 
-
+    // dict    
+    let viewDict = ["red" : colorfulViews[0], "green" : colorfulViews[1], "yellow" : colorfulViews[2], "blue" : colorfulViews[3]]
+    
+    // Horizontal Spacing 四个view水平方向上标准间距，中心对齐，与superview标准间距 
+    view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[red]-[green(red)]-[yellow(green)]-[blue(yellow)]-|", options: .AlignAllCenterY, metrics: nil, views: viewDict))
+    
+    // Vertially Center 第一个view与superView中心对齐
+    view.addConstraint(NSLayoutConstraint(item: colorfulViews[0], attribute: .CenterY, relatedBy: .Equal, toItem: view, attribute: .CenterY, multiplier: 1, constant: 0))
+    
+    // 每个view宽高比为1
+    for v in colorfulViews {
+      v.addConstraint(NSLayoutConstraint(item: v, attribute: .Width, relatedBy: .Equal, toItem: v, attribute: .Height, multiplier: 1, constant: 0))
+     }
