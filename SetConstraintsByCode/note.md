@@ -17,6 +17,7 @@ Swift：
     convenience init(item view1: AnyObject, attribute attr1: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toItem view2: AnyObject?, attribute attr2: NSLayoutAttribute, multiplier multiplier: CGFloat, constant c: CGFloat)
     
 ![image](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/Art/view_formula_2x.png)
+![image](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/Art/attributes_2x.png)
     
 ### NSLayoutRelation
 Objective-C：
