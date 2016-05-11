@@ -44,14 +44,11 @@ class ViewControllerWithVFL: UIViewController {
   func addConstraints() {
     let viewDict = ["red" : colorfulViews[0], "green" : colorfulViews[1], "yellow" : colorfulViews[2], "blue" : colorfulViews[3]]
     // Horizontal Spacing
-    view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[red]-[green]-[yellow]-[blue]-|", options: .AlignAllTop, metrics: nil, views: viewDict))
+    view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[red]-[green(red)]-[yellow(green)]-[blue(yellow)]-|", options: .AlignAllCenterY, metrics: nil, views: viewDict))
     // Vertially Center
     view.addConstraint(NSLayoutConstraint(item: colorfulViews[0], attribute: .CenterY, relatedBy: .Equal, toItem: view, attribute: .CenterY, multiplier: 1, constant: 0))
     for v in colorfulViews {
       v.addConstraint(NSLayoutConstraint(item: v, attribute: .Width, relatedBy: .Equal, toItem: v, attribute: .Height, multiplier: 1, constant: 0))
-    }
-    for i in 1...3 {
-      view.addConstraint(NSLayoutConstraint(item: colorfulViews[i], attribute: .Width, relatedBy: .Equal, toItem: colorfulViews[i - 1], attribute: .Width, multiplier: 1, constant: 0))
     }
   }
 }

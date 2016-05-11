@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -20,20 +21,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Nez-p9-LK0">
-                                <rect key="frame" x="86" y="86" width="428" height="428"/>
+                                <rect key="frame" x="176" y="176" width="248" height="248"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1wI-AB-g3h">
-                                        <rect key="frame" x="0.0" y="0.0" width="210" height="428"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="248"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4hK-fb-kSb" userLabel="red">
-                                                <rect key="frame" x="0.0" y="0.0" width="210" height="210"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="4hK-fb-kSb" secondAttribute="height" id="8d1-R8-AKB"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQk-YU-PZK" userLabel="yellow">
-                                                <rect key="frame" x="0.0" y="218" width="210" height="210"/>
+                                                <rect key="frame" x="0.0" y="128" width="120" height="120"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="RQk-YU-PZK" secondAttribute="height" id="G3r-jN-rEx"/>
@@ -45,17 +46,17 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2zA-D6-cv2">
-                                        <rect key="frame" x="218" y="0.0" width="210" height="428"/>
+                                        <rect key="frame" x="128" y="0.0" width="120" height="248"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bm-ZP-PVG" userLabel="green">
-                                                <rect key="frame" x="0.0" y="0.0" width="210" height="210"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="2bm-ZP-PVG" secondAttribute="height" id="gdZ-o4-iam"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gjp-LP-1c6" userLabel="blue">
-                                                <rect key="frame" x="0.0" y="218" width="210" height="210"/>
+                                                <rect key="frame" x="0.0" y="128" width="120" height="120"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Gjp-LP-1c6" secondAttribute="height" multiplier="1:1" id="czJ-Q7-Z62"/>
@@ -69,12 +70,36 @@
                                     <constraint firstItem="Gjp-LP-1c6" firstAttribute="width" secondItem="4hK-fb-kSb" secondAttribute="width" id="lFk-MJ-ihZ"/>
                                 </constraints>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u2p-0E-VeS">
+                                <rect key="frame" x="20" y="28" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="5HO-uM-lOB"/>
+                                    <constraint firstAttribute="height" constant="30" id="Wqz-cl-vgi"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRT-ow-Sbi">
+                                <rect key="frame" x="58" y="32" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoh-VP-nr6">
+                                <rect key="frame" x="108" y="28" width="472" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4hK-fb-kSb" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.35" id="3HH-MZ-njF"/>
+                            <constraint firstItem="4hK-fb-kSb" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="3HH-MZ-njF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zoh-VP-nr6" secondAttribute="trailing" id="NKf-ji-bk9"/>
+                            <constraint firstItem="gRT-ow-Sbi" firstAttribute="leading" secondItem="u2p-0E-VeS" secondAttribute="trailing" constant="8" symbolic="YES" id="Opk-1T-d0H"/>
+                            <constraint firstItem="u2p-0E-VeS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="TPv-OG-kZr"/>
                             <constraint firstItem="Nez-p9-LK0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Vv9-HZ-wFd"/>
+                            <constraint firstItem="zoh-VP-nr6" firstAttribute="leading" secondItem="gRT-ow-Sbi" secondAttribute="trailing" constant="8" symbolic="YES" id="cvy-oq-Gmq"/>
+                            <constraint firstItem="u2p-0E-VeS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="gFL-ql-EPC"/>
+                            <constraint firstItem="gRT-ow-Sbi" firstAttribute="centerY" secondItem="u2p-0E-VeS" secondAttribute="centerY" id="kO1-xX-o30"/>
                             <constraint firstItem="Nez-p9-LK0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mv9-Eh-Emd"/>
+                            <constraint firstItem="zoh-VP-nr6" firstAttribute="centerY" secondItem="gRT-ow-Sbi" secondAttribute="centerY" id="yTP-TZ-gh1"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="SB" id="QCH-ol-yS1"/>
@@ -88,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1184.5" y="262.5"/>
+            <point key="canvasLocation" x="1184" y="262"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="YFI-9d-1V8">

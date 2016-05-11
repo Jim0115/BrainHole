@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CCD785C51CDE02180007548A"
-               BuildableName = "SDWebImageDemo.app"
-               BlueprintName = "SDWebImageDemo"
-               ReferencedContainer = "container:SDWebImageDemo.xcodeproj">
+               BlueprintIdentifier = "CC60FCD31CE363CF00F061A7"
+               BuildableName = "Calculator.app"
+               BlueprintName = "Calculator"
+               ReferencedContainer = "container:Calculator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CCD785C51CDE02180007548A"
-            BuildableName = "SDWebImageDemo.app"
-            BlueprintName = "SDWebImageDemo"
-            ReferencedContainer = "container:SDWebImageDemo.xcodeproj">
+            BlueprintIdentifier = "CC60FCD31CE363CF00F061A7"
+            BuildableName = "Calculator.app"
+            BlueprintName = "Calculator"
+            ReferencedContainer = "container:Calculator.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CCD785C51CDE02180007548A"
-            BuildableName = "SDWebImageDemo.app"
-            BlueprintName = "SDWebImageDemo"
-            ReferencedContainer = "container:SDWebImageDemo.xcodeproj">
+            BlueprintIdentifier = "CC60FCD31CE363CF00F061A7"
+            BuildableName = "Calculator.app"
+            BlueprintName = "Calculator"
+            ReferencedContainer = "container:Calculator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CCD785C51CDE02180007548A"
-            BuildableName = "SDWebImageDemo.app"
-            BlueprintName = "SDWebImageDemo"
-            ReferencedContainer = "container:SDWebImageDemo.xcodeproj">
+            BlueprintIdentifier = "CC60FCD31CE363CF00F061A7"
+            BuildableName = "Calculator.app"
+            BlueprintName = "Calculator"
+            ReferencedContainer = "container:Calculator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
