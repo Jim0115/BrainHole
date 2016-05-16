@@ -41,6 +41,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="38"/>
                                                 <state key="normal" title="C"/>
+                                                <connections>
+                                                    <action selector="clean:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZNh-6Y-fbj"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ul2-Vg-7j0">
                                                 <rect key="frame" x="95" y="0.0" width="94" height="94"/>
@@ -70,6 +73,9 @@
                                                 <state key="normal" title="÷">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="arithmetic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="usY-L0-Eo7"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -127,6 +133,9 @@
                                                 <state key="normal" title="×">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="arithmetic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ek9-vw-PZg"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -179,6 +188,9 @@
                                                 <state key="normal" title="−">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="arithmetic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5XP-Go-RWa"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -231,6 +243,9 @@
                                                 <state key="normal" title="+">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="arithmetic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8OV-F5-EQF"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -259,6 +274,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="45"/>
                                                 <state key="normal" title="."/>
+                                                <connections>
+                                                    <action selector="dot:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ilq-2g-Eck"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vE5-Qh-r4f">
                                                 <rect key="frame" x="285" y="0.0" width="94" height="94"/>
@@ -270,6 +288,9 @@
                                                 <state key="normal" title="=">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="equal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t0e-QV-emk"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
