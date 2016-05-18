@@ -87,11 +87,26 @@ class ViewController: UIViewController {
     case .none:
       break
     }
+    tmp = foo(status)(answer, s)
     screen.text = tmp.screenValue
     reset = true
     status = .none
   }
   
+  func foo(ari: Arithmetic) -> (Double, Double) -> Double {
+    switch ari {
+    case .add:
+      return { $0 + $1 }
+    case .subtract:
+      return { $0 - $1 }
+    case .multiply:
+      return { $0 * $1 }
+    case .devide:
+      return { $0 / $1 }
+    case .none:
+      return { _,_ in return Double(Int.min) }
+    }
+  }
   
 }
 
