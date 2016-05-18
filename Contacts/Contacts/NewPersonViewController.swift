@@ -54,7 +54,7 @@ class NewPersonViewController: UIViewController, UITextFieldDelegate {
     
     if segue.identifier == "append person" {
       let destination = segue.destinationViewController as! ContactsTableViewController
-      destination.people.append(Person(firstName: firstNameField.text, lastName: lastNameField.text, phoneNumber: phoneField.text))
+      destination.data.append(Person(firstName: firstNameField.text, lastName: lastNameField.text, phoneNumber: phoneField.text))
     }
   }
   

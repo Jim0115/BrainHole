@@ -10,37 +10,43 @@ import UIKit
 
 class ContactsTableViewController: UITableViewController {
   
-  var people = Array(arrayLiteral: Person(firstName: "Shijie", lastName: "Wang", phoneNumber: "1234567890123")) {
+  var data = Array(arrayLiteral: Person(firstName: "Shijie", lastName: "Wang", phoneNumber: "1234567890123")) {
     didSet {
-      people.sortInPlace { $0.lastName < $1.lastName }
+      print(data)
     }
   }
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
+  var people: [[Person]] {
+    return groupByFirstLetter(data)
   }
   
   // MARK: - Table view data source
   
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 1
+    return people.count
   }
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return people.count
+    return people[section].count
   }
   
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("person cell", forIndexPath: indexPath) as! PersonCell
     
-    cell.firstNameLabel.text = people[indexPath.row].firstName
-    cell.lastNameLabel.text = people[indexPath.row].lastName
+    cell.firstNameLabel.text = people[indexPath.section][indexPath.row].firstName
+    cell.lastNameLabel.text = people[indexPath.section][indexPath.row].lastName
     
     return cell
   }
   
+  override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let label = UILabel(frame: CGRect(x: 15, y: 0, width: view.bounds.width - 30, height: 20))
+    label.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
+    label.text = "    " + String(people[section][0].lastName.characters.first!)
+    label.adjustsFontSizeToFitWidth = true
+    return label
+  }
   
   /*
    // Override to support conditional editing of the table view.
@@ -89,5 +95,28 @@ class ContactsTableViewController: UITableViewController {
 //    
 //  }
   
-  
+  func groupByFirstLetter(values: [Person]) -> [[Person]] {
+    var ans = [[Person]]()
+    let sorted = values.sort { $0.lastName < $1.lastName }
+    var tmp = [Person]()
+    
+    for index in 0..<sorted.count {
+      if tmp.isEmpty {
+        tmp.append(sorted[index])
+      } else {
+        if tmp[0].lastName.characters.first == sorted[index].lastName.characters.first {
+          tmp.append(sorted[index])
+        } else {
+          ans.append(tmp)
+          tmp = []
+          tmp.append(sorted[index])
+        }
+      }
+    }
+    if !tmp.isEmpty {
+      ans.append(tmp)
+    }
+    
+    return ans
+  }
 }

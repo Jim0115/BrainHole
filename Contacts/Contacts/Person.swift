@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Person {
+class Person: CustomStringConvertible {
   var firstName = ""
   var lastName = ""
   var phoneNumber = ""
@@ -19,5 +19,9 @@ class Person {
     self.firstName = firstName ?? ""
     self.lastName = lastName ?? ""
     self.phoneNumber = phoneNumber ?? ""
+  }
+  
+  var description: String {
+    return "\n " + firstName + " " + lastName + " " + phoneNumber
   }
 }
