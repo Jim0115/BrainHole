@@ -8,7 +8,10 @@
 
 import UIKit
 
-class ContactsTableViewController: UITableViewController {
+class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
+  
+  @IBOutlet weak var searchBar: UISearchBar!
+  
   
   var data = Array(arrayLiteral: Person(firstName: "Shijie", lastName: "Wang", phoneNumber: "1234567890123")) {
     didSet {
@@ -17,7 +20,16 @@ class ContactsTableViewController: UITableViewController {
   }
   
   var people: [[Person]] {
-    return groupByFirstLetter(data)
+    guard let text = searchBar.text else {
+      return groupByFirstLetter(data)
+    }
+    
+    if text.isEmpty {
+      return groupByFirstLetter(data)
+    }
+    
+    return groupByFirstLetter(data.filter { $0.firstName.lowercaseString.containsString(text.lowercaseString) || $0.lastName.lowercaseString.containsString(text.lowercaseString) })
+    
   }
   
   // MARK: - Table view data source
@@ -40,12 +52,20 @@ class ContactsTableViewController: UITableViewController {
     return cell
   }
   
+  // MARK: - Table view delegate
+  
   override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let label = UILabel(frame: CGRect(x: 15, y: 0, width: view.bounds.width - 30, height: 20))
     label.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
     label.text = "    " + String(people[section][0].lastName.characters.first!)
     label.adjustsFontSizeToFitWidth = true
     return label
+  }
+  
+  // MARK: - search bar delegate
+  
+  func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    tableView.reloadData()
   }
   
   /*
@@ -89,11 +109,11 @@ class ContactsTableViewController: UITableViewController {
     tableView.reloadData()
   }
   
-   
+  
   // In a storyboard-based application, you will often want to do a little preparation before navigation
-//  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//    
-//  }
+  //  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  //
+  //  }
   
   func groupByFirstLetter(values: [Person]) -> [[Person]] {
     var ans = [[Person]]()
