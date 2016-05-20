@@ -16,6 +16,8 @@
 		CC205D291CEB422200903DAC /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC205D281CEB422200903DAC /* Person.swift */; };
 		CC205D311CEB446400903DAC /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC205D301CEB446400903DAC /* PersonCell.swift */; };
 		CCA8110E1CEB4D2100252857 /* NewPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA8110D1CEB4D2100252857 /* NewPersonViewController.swift */; };
+		CCF2117C1CEEA1A3004292DF /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF2117A1CEEA1A3004292DF /* Contact+CoreDataProperties.swift */; };
+		CCF2117D1CEEA1A3004292DF /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF2117B1CEEA1A3004292DF /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		CC205D281CEB422200903DAC /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		CC205D301CEB446400903DAC /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		CCA8110D1CEB4D2100252857 /* NewPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPersonViewController.swift; sourceTree = "<group>"; };
+		CCF2117A1CEEA1A3004292DF /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CCF2117B1CEEA1A3004292DF /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 		CC205D2A1CEB423000903DAC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CCF2117A1CEEA1A3004292DF /* Contact+CoreDataProperties.swift */,
+				CCF2117B1CEEA1A3004292DF /* Contact.swift */,
 				CC205D281CEB422200903DAC /* Person.swift */,
 				CC205D181CEB409B00903DAC /* Contacts.xcdatamodeld */,
 			);
@@ -182,7 +188,9 @@
 			files = (
 				CCA8110E1CEB4D2100252857 /* NewPersonViewController.swift in Sources */,
 				CC205D121CEB409B00903DAC /* AppDelegate.swift in Sources */,
+				CCF2117C1CEEA1A3004292DF /* Contact+CoreDataProperties.swift in Sources */,
 				CC205D311CEB446400903DAC /* PersonCell.swift in Sources */,
+				CCF2117D1CEEA1A3004292DF /* Contact.swift in Sources */,
 				CC205D1A1CEB409B00903DAC /* Contacts.xcdatamodeld in Sources */,
 				CC205D291CEB422200903DAC /* Person.swift in Sources */,
 				CC205D271CEB413400903DAC /* ContactsTableViewController.swift in Sources */,
