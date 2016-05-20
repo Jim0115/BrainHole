@@ -63,18 +63,18 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
   //  }
   
   
-//  override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-//    return true
-//  }
-//  
-//  
-//  // Override to support editing the table view.
-//  override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-//    if editingStyle == .Delete {
-//      delegate.managedObjectContext.deleteObject(data[indexPath.row])
-//      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-//    }
-//  }
+  override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    return true
+  }
+  
+  
+  // Override to support editing the table view.
+  override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    if editingStyle == .Delete {
+      delegate.managedObjectContext.deleteObject(data[indexPath.row])
+      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+    }
+  }
  
   
   /*
