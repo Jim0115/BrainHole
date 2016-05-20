@@ -7,23 +7,44 @@
 //
 
 import UIKit
+import CoreData
 
-class NewPersonViewController: UIViewController, UITextFieldDelegate {
-  
-  @IBOutlet weak var addPhotoButton: UIButton!
-  
+class NewPersonViewController: UIViewController {
   
   @IBOutlet weak var doneButton: UIBarButtonItem!
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    addPhotoButton.setTitle("add\nphoto", forState: .Normal)
-  }
+  @IBOutlet var textFields: [UITextField]!
   
+  let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
   
   @IBAction func cancel(sender: AnyObject) {
     dismissViewControllerAnimated(true, completion: nil)
   }
+  
+  @IBAction func done(sender: UIBarButtonItem) {
+    view.becomeFirstResponder()
+    let newContact = NSEntityDescription.insertNewObjectForEntityForName("Contact", inManagedObjectContext: delegate.managedObjectContext) as! Contact
+    for field in textFields {
+      switch field.tag {
+      case 101:
+        newContact.firstName = field.text
+      case 102:
+        newContact.lastName = field.text
+      case 103:
+        newContact.phone = field.text
+      default:
+        break
+      }
+    }
+    delegate.saveContext()
+    cancel(self)
+  }
+  
+  
+  @IBAction func textChanged(sender: UITextField) {
+    doneButton.enabled = textFields.map { !$0.text!.isEmpty }.reduce(false) { $0 || $1 }
+  }
+  
   
   // MARK: - Navigation
   

@@ -90,18 +90,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Dg1-xZ-hhd">
-                                <rect key="frame" x="148" y="72" width="432" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="Mv2-j3-UZ8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9Tx-bZ-O8T">
+                            <textField opaque="NO" clipsSubviews="YES" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9Tx-bZ-O8T">
                                 <rect key="frame" x="148" y="114" width="432" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <action selector="textChanged:" destination="VBd-O3-6To" eventType="editingChanged" id="amL-RV-pDm"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYg-Ap-HoH">
                                 <rect key="frame" x="20" y="72" width="120" height="120"/>
@@ -110,7 +105,7 @@
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
                                 <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                <state key="normal" title="" backgroundImage="user">
+                                <state key="normal" title="add photo" backgroundImage="user">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
@@ -135,10 +130,24 @@
                                     <constraint firstAttribute="height" constant="1" id="ssJ-a0-rpe"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Company" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lK7-LI-0ow">
+                            <textField opaque="NO" clipsSubviews="YES" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Company" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lK7-LI-0ow">
                                 <rect key="frame" x="148" y="156" width="432" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <action selector="textChanged:" destination="VBd-O3-6To" eventType="editingChanged" id="aie-fG-2k0"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Dg1-xZ-hhd">
+                                <rect key="frame" x="148" y="72" width="432" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Mv2-j3-UZ8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <action selector="textChanged:" destination="VBd-O3-6To" eventType="editingChanged" id="iHA-VZ-pAL"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -194,17 +203,18 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" style="done" id="L4p-jI-KaY">
                             <connections>
-                                <segue destination="TPi-g9-NYX" kind="unwind" identifier="append person" unwindAction="appendNewPerson:" id="hhO-vr-xiS"/>
+                                <action selector="done:" destination="VBd-O3-6To" id="Gwx-fc-nEm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addPhotoButton" destination="jYg-Ap-HoH" id="3J9-3y-xPt"/>
                         <outlet property="doneButton" destination="L4p-jI-KaY" id="NbO-Jk-yQ9"/>
+                        <outletCollection property="textFields" destination="Dg1-xZ-hhd" collectionClass="NSMutableArray" id="slw-kq-yuO"/>
+                        <outletCollection property="textFields" destination="9Tx-bZ-O8T" collectionClass="NSMutableArray" id="InN-KO-V9k"/>
+                        <outletCollection property="textFields" destination="lK7-LI-0ow" collectionClass="NSMutableArray" id="v16-j2-6kG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8e-iA-o5z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="TPi-g9-NYX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3104" y="41"/>
         </scene>

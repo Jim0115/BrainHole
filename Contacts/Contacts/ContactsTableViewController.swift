@@ -7,60 +7,46 @@
 //
 
 import UIKit
+import CoreData
 
 class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
   
   @IBOutlet weak var searchBar: UISearchBar!
   
-  
-  var data = Array(arrayLiteral: Person(firstName: "Shijie", lastName: "Wang", phoneNumber: "1234567890123")) {
-    didSet {
-      print(data)
-    }
-  }
-  
-  var people: [[Person]] {
-    guard let text = searchBar.text else {
-      return groupByFirstLetter(data)
-    }
-    
-    if text.isEmpty {
-      return groupByFirstLetter(data)
-    }
-    
-    return groupByFirstLetter(data.filter { $0.firstName.lowercaseString.containsString(text.lowercaseString) || $0.lastName.lowercaseString.containsString(text.lowercaseString) })
-    
-  }
+  lazy var data: [Contact] = {
+    let request = NSFetchRequest(entityName: "Contact")
+    return try! (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext.executeFetchRequest(request) as! [Contact]
+  }()
   
   // MARK: - Table view data source
   
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return people.count
+    return 1
   }
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return people[section].count
+    return data.count
   }
   
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("person cell", forIndexPath: indexPath) as! PersonCell
     
-    cell.firstNameLabel.text = people[indexPath.section][indexPath.row].firstName
-    cell.lastNameLabel.text = people[indexPath.section][indexPath.row].lastName
+    cell.firstNameLabel.text = data[indexPath.row].firstName
+    cell.lastNameLabel.text = data[indexPath.row].lastName
     
     return cell
   }
   
   // MARK: - Table view delegate
   
-  override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    let label = UILabel(frame: CGRect(x: 15, y: 0, width: view.bounds.width - 30, height: 20))
-    label.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
-    label.text = "    " + String(people[section][0].lastName.characters.first!)
-    label.adjustsFontSizeToFitWidth = true
-    return label
-  }
+//  override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//    let label = UILabel(frame: CGRect(x: 15, y: 0, width: view.bounds.width - 30, height: 20))
+//    label.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
+////    label.text = "    " + String(people[section][0].lastName.characters.first!)
+//    label.adjustsFontSizeToFitWidth = true
+//    return label
+//  }
   
   // MARK: - search bar delegate
   
@@ -104,10 +90,6 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
    */
   
   // MARK: - Navigation
-  
-  @IBAction func appendNewPerson(segue: UIStoryboardSegue) {
-    tableView.reloadData()
-  }
   
   
   // In a storyboard-based application, you will often want to do a little preparation before navigation
