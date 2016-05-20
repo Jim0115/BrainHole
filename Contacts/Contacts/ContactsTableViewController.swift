@@ -23,6 +23,7 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
   
   var data: [Contact] {
     let request = NSFetchRequest(entityName: "Contact")
+    request.sortDescriptors = [NSSortDescriptor(key: "lastName", ascending: true), NSSortDescriptor(key: "firstName", ascending: true)]
     return try! delegate.managedObjectContext.executeFetchRequest(request) as! [Contact]
   }
   
