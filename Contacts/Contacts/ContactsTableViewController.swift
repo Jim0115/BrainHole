@@ -13,10 +13,18 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
   
   @IBOutlet weak var searchBar: UISearchBar!
   
-  lazy var data: [Contact] = {
+  let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+  
+  override func viewDidLoad() {
+    NSNotificationCenter.defaultCenter().addObserverForName(NSManagedObjectContextDidSaveNotification, object: nil, queue: nil) {
+      [unowned self] (_) in self.tableView.reloadData()
+    }
+  }
+  
+  var data: [Contact] {
     let request = NSFetchRequest(entityName: "Contact")
-    return try! (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext.executeFetchRequest(request) as! [Contact]
-  }()
+    return try! delegate.managedObjectContext.executeFetchRequest(request) as! [Contact]
+  }
   
   // MARK: - Table view data source
   
@@ -38,41 +46,36 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
     return cell
   }
   
-  // MARK: - Table view delegate
-  
-//  override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//    let label = UILabel(frame: CGRect(x: 15, y: 0, width: view.bounds.width - 30, height: 20))
-//    label.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
-////    label.text = "    " + String(people[section][0].lastName.characters.first!)
-//    label.adjustsFontSizeToFitWidth = true
-//    return label
-//  }
-  
   // MARK: - search bar delegate
   
   func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
     tableView.reloadData()
   }
   
-  /*
-   // Override to support conditional editing of the table view.
-   override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-   // Return false if you do not want the specified item to be editable.
-   return true
-   }
-   */
+  // MARK: - Table view delegate
   
-  /*
-   // Override to support editing the table view.
-   override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-   if editingStyle == .Delete {
-   // Delete the row from the data source
-   tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-   } else if editingStyle == .Insert {
-   // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-   }
-   }
-   */
+  //  override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+  //    let label = UILabel(frame: CGRect(x: 15, y: 0, width: view.bounds.width - 30, height: 20))
+  //    label.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
+  ////    label.text = "    " + String(people[section][0].lastName.characters.first!)
+  //    label.adjustsFontSizeToFitWidth = true
+  //    return label
+  //  }
+  
+  
+//  override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+//    return true
+//  }
+//  
+//  
+//  // Override to support editing the table view.
+//  override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+//    if editingStyle == .Delete {
+//      delegate.managedObjectContext.deleteObject(data[indexPath.row])
+//      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+//    }
+//  }
+ 
   
   /*
    // Override to support rearranging the table view.
