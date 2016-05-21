@@ -21,28 +21,31 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
     }
   }
   
-  var data: [Contact] {
+  var data: [[Contact]] {
     let request = NSFetchRequest(entityName: "Contact")
+    if !searchBar.text!.isEmpty {
+      request.predicate = NSPredicate(format: "self.firstName contains[cd] %@ or self.lastName contains[cd] %@", searchBar.text!, searchBar.text!)
+    }
     request.sortDescriptors = [NSSortDescriptor(key: "lastName", ascending: true), NSSortDescriptor(key: "firstName", ascending: true)]
-    return try! delegate.managedObjectContext.executeFetchRequest(request) as! [Contact]
+    return groupByFirstLetter(try! delegate.managedObjectContext.executeFetchRequest(request) as! [Contact])
   }
   
   // MARK: - Table view data source
   
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 1
+    return data.count
   }
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return data.count
+    return data[section].count
   }
   
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("person cell", forIndexPath: indexPath) as! PersonCell
     
-    cell.firstNameLabel.text = data[indexPath.row].firstName
-    cell.lastNameLabel.text = data[indexPath.row].lastName
+    cell.firstNameLabel.text = data[indexPath.section][indexPath.row].firstName
+    cell.lastNameLabel.text = data[indexPath.section][indexPath.row].lastName
     
     return cell
   }
@@ -55,14 +58,13 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
   
   // MARK: - Table view delegate
   
-  //  override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-  //    let label = UILabel(frame: CGRect(x: 15, y: 0, width: view.bounds.width - 30, height: 20))
-  //    label.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
-  ////    label.text = "    " + String(people[section][0].lastName.characters.first!)
-  //    label.adjustsFontSizeToFitWidth = true
-  //    return label
-  //  }
-  
+  override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let label = UILabel(frame: CGRect(x: 15, y: 0, width: view.bounds.width - 30, height: 20))
+    label.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
+    label.text = "    " + String(data[section][0].lastName!.characters.first!)
+    label.adjustsFontSizeToFitWidth = true
+    return label
+  }
   
   override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
     return true
@@ -72,7 +74,7 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
   // Override to support editing the table view.
   override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     if editingStyle == .Delete {
-      delegate.managedObjectContext.deleteObject(data[indexPath.row])
+      delegate.managedObjectContext.deleteObject(data[indexPath.section][indexPath.row])
       tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
     }
   }
@@ -101,16 +103,16 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
   //
   //  }
   
-  func groupByFirstLetter(values: [Person]) -> [[Person]] {
-    var ans = [[Person]]()
+  func groupByFirstLetter(values: [Contact]) -> [[Contact]] {
+    var ans = [[Contact]]()
     let sorted = values.sort { $0.lastName < $1.lastName }
-    var tmp = [Person]()
+    var tmp = [Contact]()
     
     for index in 0..<sorted.count {
       if tmp.isEmpty {
         tmp.append(sorted[index])
       } else {
-        if tmp[0].lastName.characters.first == sorted[index].lastName.characters.first {
+        if tmp[0].lastName!.characters.first == sorted[index].lastName!.characters.first {
           tmp.append(sorted[index])
         } else {
           ans.append(tmp)
