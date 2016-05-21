@@ -61,7 +61,7 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
   override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let label = UILabel(frame: CGRect(x: 15, y: 0, width: view.bounds.width - 30, height: 20))
     label.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
-    label.text = "    " + String(data[section][0].lastName!.characters.first!)
+    label.text = "    " + String(data[section][0].lastName!.firstLetterOfMandarinString())
     label.adjustsFontSizeToFitWidth = true
     return label
   }
@@ -74,8 +74,13 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
   // Override to support editing the table view.
   override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     if editingStyle == .Delete {
+      let count = data[indexPath.section].count
       delegate.managedObjectContext.deleteObject(data[indexPath.section][indexPath.row])
-      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+      if count == 1 {
+        tableView.deleteSections(NSIndexSet(index: indexPath.section), withRowAnimation: .Automatic)
+      } else {
+        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+      }
     }
   }
  
@@ -105,19 +110,18 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
   
   func groupByFirstLetter(values: [Contact]) -> [[Contact]] {
     var ans = [[Contact]]()
-    let sorted = values.sort { $0.lastName < $1.lastName }
     var tmp = [Contact]()
     
-    for index in 0..<sorted.count {
+    for index in 0..<values.count {
       if tmp.isEmpty {
-        tmp.append(sorted[index])
+        tmp.append(values[index])
       } else {
-        if tmp[0].lastName!.characters.first == sorted[index].lastName!.characters.first {
-          tmp.append(sorted[index])
+        if tmp[0].lastName!.firstLetterOfMandarinString() == values[index].lastName!.firstLetterOfMandarinString() {
+          tmp.append(values[index])
         } else {
           ans.append(tmp)
           tmp = []
-          tmp.append(sorted[index])
+          tmp.append(values[index])
         }
       }
     }
@@ -126,5 +130,16 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     return ans
+  }
+}
+
+extension String {
+  func firstLetterOfMandarinString() -> String {
+    guard !self.isEmpty else { return "#" }
+    let s = self.stringByApplyingTransform(NSStringTransformMandarinToLatin, reverse: false)!
+    if !NSCharacterSet.letterCharacterSet().characterIsMember(s.utf16.first!) {
+      return "#"
+    }
+    return String(s.characters.first!).uppercaseString
   }
 }
