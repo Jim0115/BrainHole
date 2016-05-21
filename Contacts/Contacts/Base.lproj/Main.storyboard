@@ -49,8 +49,14 @@
                                         <constraint firstItem="ggE-RD-DK9" firstAttribute="baseline" secondItem="6Qh-7Q-jUS" secondAttribute="baseline" id="7Hq-fg-PAR"/>
                                         <constraint firstItem="ggE-RD-DK9" firstAttribute="leading" secondItem="6Qh-7Q-jUS" secondAttribute="trailing" constant="8" id="9Ve-R1-QsS"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="6Qh-7Q-jUS" secondAttribute="leading" constant="-10" id="JPi-vy-qcR"/>
+                                        <constraint firstItem="ggE-RD-DK9" firstAttribute="centerY" secondItem="P7S-xo-gnA" secondAttribute="centerY" id="Sq6-cj-ht6"/>
                                         <constraint firstItem="6Qh-7Q-jUS" firstAttribute="centerY" secondItem="P7S-xo-gnA" secondAttribute="centerY" id="rtI-Fc-dlR"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="7Hq-fg-PAR"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="firstNameLabel" destination="6Qh-7Q-jUS" id="b15-Rf-hlx"/>
