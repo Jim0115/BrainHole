@@ -17,6 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
+    
+//    let s = NSEntityDescription.insertNewObjectForEntityForName("Student", inManagedObjectContext: managedObjectContext) as! Student
+//    s.stuName = "wang"
+//    s.stuID = "stu_001"
+//    
+//    let c = NSEntityDescription.insertNewObjectForEntityForName("Course", inManagedObjectContext: managedObjectContext) as! Course
+//    c.courseID = "course_001"
+//    c.courseName = "iOS dev"
+//    
+//    saveContext()
+    
     return true
   }
 
