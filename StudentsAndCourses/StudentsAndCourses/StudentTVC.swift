@@ -81,12 +81,12 @@ class StudentTVC: UITableViewController {
   // In a storyboard-based application, you will often want to do a little preparation before navigation
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     guard segue.identifier == "show cos" else { return }
-    let destination = segue.destinationViewController as! CourseOfStudentTVC
+    let destination = segue.destinationViewController as! DetailTVC
     let index = tableView.indexPathForSelectedRow!.row
-    if let courses = students[index].courses {
-      destination.courses = courses.allObjects as! [Course]
-    }
-    destination.stuName = students[index].stuName
+    destination.title = "Courses of " + students[index].stuName!
+    let courses = students[index].courses!.allObjects as! [Course]
+    destination.texts = courses.map { $0.courseName! }
+    destination.details = courses.map { $0.courseID! }
   }
   
   

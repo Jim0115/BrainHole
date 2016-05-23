@@ -116,10 +116,10 @@
             </objects>
             <point key="canvasLocation" x="1697.5" y="-785.5"/>
         </scene>
-        <!--Course Of StudentTVC-->
+        <!--DetailTVC-->
         <scene sceneID="Sdv-qC-PXB">
             <objects>
-                <tableViewController id="Afm-NC-k7r" customClass="CourseOfStudentTVC" customModule="StudentsAndCourses" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Afm-NC-k7r" customClass="DetailTVC" customModule="StudentsAndCourses" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="sE5-ur-TMS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,7 +158,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ahe-yf-sgu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1697.5" y="-61.5"/>
+            <point key="canvasLocation" x="1957.5" y="324.5"/>
         </scene>
         <!--Students-->
         <scene sceneID="mNU-HV-EqQ">
@@ -246,6 +246,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Afm-NC-k7r" kind="show" id="TNl-fq-W6C"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -342,4 +345,7 @@
         <image name="course" width="30" height="30"/>
         <image name="student" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="TNl-fq-W6C"/>
+    </inferredMetricsTieBreakers>
 </document>

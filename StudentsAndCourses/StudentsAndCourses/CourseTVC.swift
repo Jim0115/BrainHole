@@ -38,6 +38,7 @@ class CourseTVC: UITableViewController {
     let c = courses[indexPath.row]
     cell.textLabel?.text = c.courseName
     cell.detailTextLabel?.text = c.courseID
+//    print("the last student of \(c.courseName!) is \((c.students!.allObjects.last as! Student).stuName)")
     
     return cell
   }
@@ -76,14 +77,18 @@ class CourseTVC: UITableViewController {
    }
    */
   
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
+  
+  // MARK: - Navigation
+  
+  // In a storyboard-based application, you will often want to do a little preparation before navigation
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    let destination = segue.destinationViewController as! DetailTVC
+    let index = tableView.indexPathForSelectedRow!.row
+    destination.title = "Students of " + courses[index].courseName!
+    let students = courses[index].students!.allObjects as! [Student]
+    destination.texts = students.map { $0.stuName! }
+    destination.details = students.map { $0.stuID! }
+  }
+  
   
 }
