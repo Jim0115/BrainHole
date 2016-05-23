@@ -19,6 +19,11 @@ class CourseTVC: UITableViewController {
     return (try! delegate.managedObjectContext.executeFetchRequest(request)) as! [Course]
   }
   
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    tableView.reloadData()
+  }
+  
   // MARK: - Table view data source
   
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -82,6 +87,7 @@ class CourseTVC: UITableViewController {
   
   // In a storyboard-based application, you will often want to do a little preparation before navigation
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    guard segue.identifier == "show detail" else { return }
     let destination = segue.destinationViewController as! DetailTVC
     let index = tableView.indexPathForSelectedRow!.row
     destination.title = "Students of " + courses[index].courseName!
