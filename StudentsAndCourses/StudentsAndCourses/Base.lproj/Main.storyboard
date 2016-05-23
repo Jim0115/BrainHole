@@ -119,7 +119,7 @@
         <!--DetailTVC-->
         <scene sceneID="Sdv-qC-PXB">
             <objects>
-                <tableViewController id="Afm-NC-k7r" customClass="DetailTVC" customModule="StudentsAndCourses" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="Afm-NC-k7r" customClass="DetailTVC" customModule="StudentsAndCourses" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="sE5-ur-TMS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,7 +155,6 @@
                             <outlet property="delegate" destination="Afm-NC-k7r" id="LTx-8O-dFE"/>
                         </connections>
                     </tableView>
-                    <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ahe-yf-sgu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -481,6 +480,6 @@
         <image name="student" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TNl-fq-W6C"/>
+        <segue reference="HNc-Ru-7Ww"/>
     </inferredMetricsTieBreakers>
 </document>
