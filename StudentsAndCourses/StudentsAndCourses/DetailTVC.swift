@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CourseOfStudentTVC: UITableViewController {
+class DetailTVC: UITableViewController {
   
   var courses = [Course]()
   var stuName: String?
