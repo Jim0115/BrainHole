@@ -19,6 +19,7 @@ class NewStudentVC: UIViewController, UITableViewDataSource {
   
   var courses: [Course] {
     let request = NSFetchRequest(entityName: "Course")
+    request.sortDescriptors = [NSSortDescriptor(key: "courseID", ascending: true)]
     return (try! delegate.managedObjectContext.executeFetchRequest(request)) as! [Course]
   }
   
