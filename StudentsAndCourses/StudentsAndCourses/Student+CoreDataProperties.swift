@@ -2,7 +2,7 @@
 //  Student+CoreDataProperties.swift
 //  StudentsAndCourses
 //
-//  Created by 王仕杰 on 5/22/16.
+//  Created by 王仕杰 on 5/23/16.
 //  Copyright © 2016 王仕杰. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -16,6 +16,6 @@ extension Student {
 
     @NSManaged var stuID: String?
     @NSManaged var stuName: String?
-    @NSManaged var courses: Course?
+    @NSManaged var courses: NSSet?
 
 }
