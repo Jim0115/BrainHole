@@ -15,6 +15,7 @@ class StudentTVC: UITableViewController {
   
   var students: [Student] {
     let request = NSFetchRequest(entityName: "Student")
+    request.sortDescriptors = [NSSortDescriptor(key: "stuID", ascending: true)]
     return (try! delegate.managedObjectContext.executeFetchRequest(request)) as! [Student]
   }
   
@@ -40,7 +41,7 @@ class StudentTVC: UITableViewController {
     return cell
   }
   
-  // mark: - table view delegate
+  // MARK: - table view delegate
   
   // Override to support conditional editing of the table view.
   override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
