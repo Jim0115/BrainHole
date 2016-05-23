@@ -120,7 +120,7 @@
         <scene sceneID="Sdv-qC-PXB">
             <objects>
                 <tableViewController id="Afm-NC-k7r" customClass="CourseOfStudentTVC" customModule="StudentsAndCourses" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="sE5-ur-TMS">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="sE5-ur-TMS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -265,7 +265,7 @@
         <scene sceneID="xqu-4i-9Pq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vTO-4t-nVF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Students" id="WbL-NL-eaV"/>
+                    <tabBarItem key="tabBarItem" title="Students" image="student" id="WbL-NL-eaV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LcG-an-tj7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -284,7 +284,7 @@
         <scene sceneID="37k-KH-KjR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MPT-Kt-ITN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Courses" id="qYB-Yq-UHv"/>
+                    <tabBarItem key="tabBarItem" title="Courses" image="course" id="qYB-Yq-UHv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1bS-dg-5tm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -338,4 +338,8 @@
             <point key="canvasLocation" x="1242.5" y="-785.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="course" width="30" height="30"/>
+        <image name="student" width="30" height="30"/>
+    </resources>
 </document>
