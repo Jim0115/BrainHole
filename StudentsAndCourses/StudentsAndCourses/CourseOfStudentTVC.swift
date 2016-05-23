@@ -1,48 +1,43 @@
 //
-//  StudentTVC.swift
+//  CourseOfStudentTVC.swift
 //  StudentsAndCourses
 //
-//  Created by 王仕杰 on 5/22/16.
+//  Created by 王仕杰 on 5/23/16.
 //  Copyright © 2016 王仕杰. All rights reserved.
 //
 
 import UIKit
-import CoreData
 
-class StudentTVC: UITableViewController {
+class CourseOfStudentTVC: UITableViewController {
   
-  let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+  var courses = [Course]()
+  var stuName: String?
   
-  var students: [Student] {
-    let request = NSFetchRequest(entityName: "Student")
-    return (try! delegate.managedObjectContext.executeFetchRequest(request)) as! [Student]
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    title = "Courses of "
+    title?.appendContentsOf(stuName ?? "")
+    // Uncomment the following line to preserve selection between presentations
+    // self.clearsSelectionOnViewWillAppear = false
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem()
   }
-  
-  override func viewWillAppear(animated: Bool) {
-    tableView.reloadData()
-  }
-  
-// should select course when appending new student
   
   // MARK: - Table view data source
   
-  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    // #warning Incomplete implementation, return the number of sections
-    return 1
-  }
-  
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     // #warning Incomplete implementation, return the number of rows
-    return students.count
+    return courses.count
   }
   
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("student cell", forIndexPath: indexPath)
+    let cell = tableView.dequeueReusableCellWithIdentifier("cos cell", forIndexPath: indexPath)
     
-    let s = students[indexPath.row]
-    cell.textLabel?.text = s.stuName
-    cell.detailTextLabel?.text = s.stuID
+    let c = courses[indexPath.row]
+    cell.textLabel?.text = c.courseName
+    cell.detailTextLabel?.text = c.courseID
     
     return cell
   }
@@ -83,19 +78,14 @@ class StudentTVC: UITableViewController {
    }
    */
   
-  
+  /*
    // MARK: - Navigation
    
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    guard segue.identifier == "show cos" else { return }
-    let destination = segue.destinationViewController as! CourseOfStudentTVC
-    let index = tableView.indexPathForSelectedRow!.row
-    if let courses = students[index].courses {
-      destination.courses = courses.allObjects as! [Course]
-    }
-    destination.stuName = students[index].stuName
-  }
-  
+   // In a storyboard-based application, you will often want to do a little preparation before navigation
+   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+   // Get the new view controller using segue.destinationViewController.
+   // Pass the selected object to the new view controller.
+   }
+   */
   
 }
