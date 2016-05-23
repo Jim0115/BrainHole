@@ -10,13 +10,11 @@ import UIKit
 
 class DetailTVC: UITableViewController {
   
-  var courses = [Course]()
-  var stuName: String?
+  var texts = [String]()
+  var details = [String]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    title = "Courses of "
-    title?.appendContentsOf(stuName ?? "")
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = false
     
@@ -28,16 +26,15 @@ class DetailTVC: UITableViewController {
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     // #warning Incomplete implementation, return the number of rows
-    return courses.count
+    return texts.count
   }
   
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("cos cell", forIndexPath: indexPath)
     
-    let c = courses[indexPath.row]
-    cell.textLabel?.text = c.courseName
-    cell.detailTextLabel?.text = c.courseID
+    cell.textLabel?.text = texts[indexPath.row]
+    cell.detailTextLabel?.text = details[indexPath.row]
     
     return cell
   }
