@@ -120,12 +120,12 @@
         <scene sceneID="Sdv-qC-PXB">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="Afm-NC-k7r" customClass="DetailTVC" customModule="StudentsAndCourses" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="sE5-ur-TMS">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="sE5-ur-TMS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cos cell" textLabel="r0T-jx-BZp" detailTextLabel="uxf-Ie-G5B" style="IBUITableViewCellStyleSubtitle" id="8pZ-Pc-nBB">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detail cell" textLabel="r0T-jx-BZp" detailTextLabel="uxf-Ie-G5B" style="IBUITableViewCellStyleSubtitle" id="8pZ-Pc-nBB">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8pZ-Pc-nBB" id="uZP-as-yGI">
@@ -155,6 +155,9 @@
                             <outlet property="delegate" destination="Afm-NC-k7r" id="LTx-8O-dFE"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ahe-yf-sgu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -480,6 +483,6 @@
         <image name="student" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HNc-Ru-7Ww"/>
+        <segue reference="TNl-fq-W6C"/>
     </inferredMetricsTieBreakers>
 </document>

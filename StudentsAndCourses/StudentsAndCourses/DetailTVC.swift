@@ -10,46 +10,53 @@ import UIKit
 
 class DetailTVC: UITableViewController {
   
-  var texts = [String]()
-  var details = [String]()
+  var isStudent = false
+  var object: AnyObject = Int()
+  var owns: [AnyObject] = [Int()]
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    navigationItem.rightBarButtonItem = editButtonItem()
+  }
   
   // MARK: - Table view data source
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    // #warning Incomplete implementation, return the number of rows
-    return texts.count
+    return owns.count
   }
   
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("cos cell", forIndexPath: indexPath)
-    
-    cell.textLabel?.text = texts[indexPath.row]
-    cell.detailTextLabel?.text = details[indexPath.row]
+    let cell = tableView.dequeueReusableCellWithIdentifier("detail cell", forIndexPath: indexPath)
+    if isStudent {
+      cell.textLabel?.text = (owns as! [Course])[indexPath.row].courseName // texts[indexPath.row]
+      cell.detailTextLabel?.text = (owns as! [Course])[indexPath.row].courseID // details[indexPath.row]
+    } else {
+      cell.textLabel?.text = (owns as! [Student])[indexPath.row].stuName // texts[indexPath.row]
+      cell.detailTextLabel?.text = (owns as! [Student])[indexPath.row].stuID // details[indexPath.row]
+    }
     
     return cell
   }
   
   // MARK: - table view delegate
   
-  
   // Override to support conditional editing of the table view.
-  override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return false if you do not want the specified item to be editable.
-    return true
-  }
+//  override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+//    // Return false if you do not want the specified item to be editable.
+//    return true
+//  }
   
   
   
   // Override to support editing the table view.
-  override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-      texts.removeAtIndex(indexPath.row)
-      details.removeAtIndex(indexPath.row)
-      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    }
-  }
-  
+//  override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+//    if editingStyle == .Delete {
+//      texts.removeAtIndex(indexPath.row)
+//      details.removeAtIndex(indexPath.row)
+//      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+//    }
+//  }
   
   /*
    // Override to support rearranging the table view.

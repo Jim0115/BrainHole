@@ -16,6 +16,7 @@
 		CC6939671CF290EE009D7A0B /* NewStudentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6939661CF290EE009D7A0B /* NewStudentVC.swift */; };
 		CC6939691CF2A5A2009D7A0B /* DetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6939681CF2A5A2009D7A0B /* DetailTVC.swift */; };
 		CC69396F1CF338AE009D7A0B /* NewCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC69396E1CF338AE009D7A0B /* NewCourseVC.swift */; };
+		CC9BAAE21CF3E595004C83D7 /* CDHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9BAAE11CF3E595004C83D7 /* CDHelper.swift */; };
 		CCD13A6D1CF1EB9000722D50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD13A6C1CF1EB9000722D50 /* AppDelegate.swift */; };
 		CCD13A721CF1EB9000722D50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCD13A701CF1EB9000722D50 /* Main.storyboard */; };
 		CCD13A751CF1EB9000722D50 /* StudentsAndCourses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CCD13A731CF1EB9000722D50 /* StudentsAndCourses.xcdatamodeld */; };
@@ -33,6 +34,7 @@
 		CC6939661CF290EE009D7A0B /* NewStudentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewStudentVC.swift; sourceTree = "<group>"; };
 		CC6939681CF2A5A2009D7A0B /* DetailTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTVC.swift; sourceTree = "<group>"; };
 		CC69396E1CF338AE009D7A0B /* NewCourseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewCourseVC.swift; sourceTree = "<group>"; };
+		CC9BAAE11CF3E595004C83D7 /* CDHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDHelper.swift; sourceTree = "<group>"; };
 		CCD13A691CF1EB9000722D50 /* StudentsAndCourses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentsAndCourses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCD13A6C1CF1EB9000722D50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCD13A711CF1EB9000722D50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				CC11AD021CF1EEFC004DFFCB /* Course+CoreDataProperties.swift */,
 				CC11AD031CF1EEFC004DFFCB /* Course.swift */,
 				CCD13A731CF1EB9000722D50 /* StudentsAndCourses.xcdatamodeld */,
+				CC9BAAE11CF3E595004C83D7 /* CDHelper.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				CC11AD051CF1EEFC004DFFCB /* Student.swift in Sources */,
 				CC11AD061CF1EEFC004DFFCB /* Course+CoreDataProperties.swift in Sources */,
 				CCD13A6D1CF1EB9000722D50 /* AppDelegate.swift in Sources */,
+				CC9BAAE21CF3E595004C83D7 /* CDHelper.swift in Sources */,
 				CC6939671CF290EE009D7A0B /* NewStudentVC.swift in Sources */,
 				CC11AD0A1CF1EFDC004DFFCB /* StudentTVC.swift in Sources */,
 				CC6939691CF2A5A2009D7A0B /* DetailTVC.swift in Sources */,
