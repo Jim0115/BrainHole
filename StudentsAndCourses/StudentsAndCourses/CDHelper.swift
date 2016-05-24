@@ -28,7 +28,7 @@ public class CDHelper {
   static var allCourses: [Course] {
     get {
       let request = NSFetchRequest(entityName: "Course")
-      request.sortDescriptors = [NSSortDescriptor(key: "CourseID", ascending: true)]
+      request.sortDescriptors = [NSSortDescriptor(key: "courseID", ascending: true)]
       do {
         return try delegate.managedObjectContext.executeFetchRequest(request) as! [Course]
       } catch let error {
@@ -37,7 +37,7 @@ public class CDHelper {
     }
   }
   
-  static func appendNewStudent(stuID: String, stuName: String, courses: [Course]) {
+  static func appendNewStudent(stuID: String?, stuName: String?, courses: [Course]) {
     let newStudent = NSEntityDescription.insertNewObjectForEntityForName("Student", inManagedObjectContext: delegate.managedObjectContext) as! Student
     newStudent.stuID = stuID
     newStudent.stuName = stuName
@@ -46,7 +46,7 @@ public class CDHelper {
     delegate.saveContext()
   }
   
-  static func appendNewCourse(courseID: String, courseName: String, students: [Student]) {
+  static func appendNewCourse(courseID: String?, courseName: String?, students: [Student]) {
     let newCourse = NSEntityDescription.insertNewObjectForEntityForName("Course", inManagedObjectContext: delegate.managedObjectContext) as! Course
     newCourse.courseID = courseID
     newCourse.courseName = courseName
