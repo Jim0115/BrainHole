@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreData
 
 class NewCourseVC: UIViewController, UITableViewDataSource {
   
@@ -18,9 +17,7 @@ class NewCourseVC: UIViewController, UITableViewDataSource {
   let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
   
   var students: [Student] {
-    let request = NSFetchRequest(entityName: "Student")
-    request.sortDescriptors = [NSSortDescriptor(key: "stuID", ascending: true)]
-    return (try! delegate.managedObjectContext.executeFetchRequest(request)) as! [Student]
+    return CDHelper.allStudents
   }
   
   override func viewDidLoad() {
@@ -46,20 +43,14 @@ class NewCourseVC: UIViewController, UITableViewDataSource {
     }
     idField.backgroundColor = UIColor.whiteColor()
     
-    let newCourse = NSEntityDescription.insertNewObjectForEntityForName("Course", inManagedObjectContext: delegate.managedObjectContext) as! Course
-    newCourse.courseName = nameField.text
-    newCourse.courseID = idField.text
-    
-    let selectedCourses = NSMutableSet()
+    var selectedStudents = [Student]()
     if let selectedPaths = tableView.indexPathsForSelectedRows {
       for indexPath in selectedPaths {
-        selectedCourses.addObject(students[indexPath.row])
+        selectedStudents.append(students[indexPath.row])
       }
     }
     
-    newCourse.students = selectedCourses.copy() as? NSSet
-    
-    delegate.saveContext()
+    CDHelper.appendNewCourse(idField.text, courseName: nameField.text, students: selectedStudents)
     
     dismissViewControllerAnimated(true, completion: nil)
   }

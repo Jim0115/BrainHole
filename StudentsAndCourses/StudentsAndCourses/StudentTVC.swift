@@ -7,16 +7,13 @@
 //
 
 import UIKit
-import CoreData
 
 class StudentTVC: UITableViewController {
   
   let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
   
   var students: [Student] {
-    let request = NSFetchRequest(entityName: "Student")
-    request.sortDescriptors = [NSSortDescriptor(key: "stuID", ascending: true)]
-    return (try! delegate.managedObjectContext.executeFetchRequest(request)) as! [Student]
+    return CDHelper.allStudents
   }
   
   override func viewWillAppear(animated: Bool) {
