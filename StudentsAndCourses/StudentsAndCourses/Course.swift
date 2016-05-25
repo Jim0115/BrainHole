@@ -15,3 +15,32 @@ class Course: NSManagedObject {
 // Insert code here to add functionality to your managed object subclass
 
 }
+
+extension Course: SAC {
+  var name: String? {
+    get {
+      return courseName
+    }
+    set {
+      courseName = newValue
+    }
+  }
+  
+  var id: String? {
+    get {
+      return courseID
+    }
+    set {
+      courseID = newValue
+    }
+  }
+  
+  var owns: [SAC]? {
+    get {
+      return students!.allObjects as! [Student]
+    }
+    set {
+      students = NSSet(array: newValue!.map { $0 as AnyObject })
+    }
+  }
+}
