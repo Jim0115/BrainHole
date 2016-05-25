@@ -83,3 +83,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+protocol SAC: AnyObject {
+  var name: String? { get set }
+  var id: String? { get set }
+  var owns: [SAC]? { get set }
+}
+
