@@ -82,12 +82,11 @@ class StudentTVC: UITableViewController {
     let destination = segue.destinationViewController as! DetailTVC
     let index = tableView.indexPathForSelectedRow!.row
     destination.title = "Courses of " + students[index].stuName!
-    let courses = students[index].courses!.allObjects as! [Course]
+//    let courses = students[index].courses!.allObjects as! [Course]
 //    destination.texts = courses.map { $0.courseName! }
 //    destination.details = courses.map { $0.courseID! }
     destination.object = students[index]
-    destination.owns = courses
-    destination.isStudent = true
+//    destination.owns = courses.map { $0 as SAC }
   }
   
   
