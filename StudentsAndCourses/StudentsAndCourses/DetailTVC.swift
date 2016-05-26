@@ -10,77 +10,54 @@ import UIKit
 
 class DetailTVC: UITableViewController {
   
-  var isStudent = false
-  var object: AnyObject = Int()
-  var owns: [AnyObject] = [Int()]
+  var object: SAC!
+  lazy var allObject: [SAC] = {
+    if self.object is Student {
+      return CDHelper.allCourses.map { $0 as SAC }
+    } else {
+      return CDHelper.allStudents.map { $0 as SAC }
+    }
+  }()
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    navigationItem.rightBarButtonItem = editButtonItem()
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: #selector(DetailTVC.changeEdit(_:)))
+  }
+  
+  func changeEdit(sender: UIBarButtonItem) {
+    tableView.editing = !tableView.editing
+    tableView.reloadData()
+    
+    if tableView.editing {
+      sender.title = "Done"
+      sender.style = .Done
+    } else {
+      sender.title = "Edit"
+      sender.style = .Plain
+    }
   }
   
   // MARK: - Table view data source
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return owns.count
+    if tableView.editing {
+      return allObject.count
+    }
+    return object.owns!.count
   }
-  
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("detail cell", forIndexPath: indexPath)
-    if isStudent {
-      cell.textLabel?.text = (owns as! [Course])[indexPath.row].courseName // texts[indexPath.row]
-      cell.detailTextLabel?.text = (owns as! [Course])[indexPath.row].courseID // details[indexPath.row]
-    } else {
-      cell.textLabel?.text = (owns as! [Student])[indexPath.row].stuName // texts[indexPath.row]
-      cell.detailTextLabel?.text = (owns as! [Student])[indexPath.row].stuID // details[indexPath.row]
-    }
+    
+    let obj = tableView.editing ? allObject[indexPath.row] : object.owns![indexPath.row]
+//    print(editing)
+    cell.textLabel?.text = obj.name // texts[indexPath.row]
+    cell.detailTextLabel?.text = obj.id // details[indexPath.row]
     
     return cell
   }
-  
-  // MARK: - table view delegate
-  
-  // Override to support conditional editing of the table view.
-//  override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-//    // Return false if you do not want the specified item to be editable.
-//    return true
-//  }
-  
-  
-  
-  // Override to support editing the table view.
-//  override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-//    if editingStyle == .Delete {
-//      texts.removeAtIndex(indexPath.row)
-//      details.removeAtIndex(indexPath.row)
-//      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-//    }
-//  }
-  
-  /*
-   // Override to support rearranging the table view.
-   override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-   
-   }
-   */
-  
-  /*
-   // Override to support conditional rearranging of the table view.
-   override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-   // Return false if you do not want the item to be re-orderable.
-   return true
-   }
-   */
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
+
+}
+
+extension Array {
 }
