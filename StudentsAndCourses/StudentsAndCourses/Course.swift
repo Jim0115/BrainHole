@@ -37,7 +37,7 @@ extension Course: SAC {
   
   var owns: [SAC]? {
     get {
-      return students!.allObjects as! [Student]
+      return students!.allObjects.map { $0 as! Student }
     }
     set {
       students = NSSet(array: newValue!.map { $0 as AnyObject })
