@@ -63,23 +63,6 @@ class CourseTVC: UITableViewController {
     }
   }
   
-  
-  /*
-   // Override to support rearranging the table view.
-   override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-   
-   }
-   */
-  
-  /*
-   // Override to support conditional rearranging of the table view.
-   override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-   // Return false if you do not want the item to be re-orderable.
-   return true
-   }
-   */
-  
-  
   // MARK: - Navigation
   
   // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -88,11 +71,7 @@ class CourseTVC: UITableViewController {
     let destination = segue.destinationViewController as! DetailTVC
     let index = tableView.indexPathForSelectedRow!.row
     destination.title = "Students of " + courses[index].courseName!
-//    let students = courses[index].students!.allObjects as! [Student]
-//    destination.texts = students.map { $0.stuName! }
-//    destination.details = students.map { $0.stuID! }
     destination.object = courses[index]
-//    destination.owns = students.map { $0 as SAC }
   }
   
   

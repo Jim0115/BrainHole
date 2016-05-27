@@ -32,7 +32,6 @@ class DetailTVC: UITableViewController {
       for i in (indexPaths.map { $0.row }) {
         tmp.append(allObject[i])
       }
-//      print(tmp.sort { $0.id < $1.id })
       object.owns = tmp.sort { $0.id < $1.id }
       
     } else {

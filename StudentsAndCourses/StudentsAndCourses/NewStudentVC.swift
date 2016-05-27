@@ -14,8 +14,6 @@ class NewStudentVC: UIViewController, UITableViewDataSource {
   @IBOutlet weak var idField: UITextField!
   @IBOutlet weak var tableView: UITableView!
   
-  let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
-  
   var courses: [Course] {
     return CDHelper.allCourses
   }
