@@ -18,8 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
+    let url = NSURL(string: "weixin://dl/scan")!
+    print(application.canOpenURL(url))
+    
     let navigationVC = window!.rootViewController as! UINavigationController
-    (navigationVC.topViewController as! ViewController).managedContext = coredateStack.context
+    (navigationVC.topViewController as! ViewController).managedContext = coredateStack.managedContext
     
     return true
   }
