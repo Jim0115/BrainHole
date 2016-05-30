@@ -21,10 +21,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   override func viewDidLoad() {
     super.viewDidLoad()
     
-//    let dogName = "haha"
-    let dogFetch1 = NSFetchRequest(entityName: "Dog")
-    dogFetch1.resultType = [.CountResultType, .ManagedObjectIDResultType]
-    print(try! managedContext.executeFetchRequest(dogFetch1))
+    let fetchRequest = NSFetchRequest(entityName: "Dog")
+    fetchRequest.predicate = NSPredicate(format: "name = %@", "Fido")
+    fetchRequest.fetchLimit = 10
+    let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+    deleteRequest.resultType = .ResultTypeCount
+    
+    do {
+      let deleteResult = try managedContext.executeRequest(deleteRequest) as! NSBatchDeleteResult
+      // do sth here
+      print(deleteResult.result)
+    } catch let error as NSError {
+      print(error.localizedDescription)
+    }
 
     //    do {
     //      let result = try managedContext.executeFetchRequest(dogFetch)
