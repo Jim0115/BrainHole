@@ -81,7 +81,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dMf-Vk-SSo">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TTm-HY-6Eo"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TTm-HY-6Eo">
+                            <connections>
+                                <action selector="addTeam:" destination="BYZ-38-t0r" id="MZM-Fy-bbb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="TTm-HY-6Eo" id="sBZ-GD-Ked"/>

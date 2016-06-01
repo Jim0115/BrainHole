@@ -70,8 +70,8 @@
 			children = (
 				CC48F96F1CFC72F600124D0D /* Team+CoreDataProperties.swift */,
 				CC48F9701CFC72F600124D0D /* Team.swift */,
-				CC48F9561CFC642F00124D0D /* AppDelegate.swift */,
 				CC48F9681CFC646B00124D0D /* WorldCup.xcdatamodeld */,
+				CC48F9561CFC642F00124D0D /* AppDelegate.swift */,
 				CC48F9581CFC642F00124D0D /* ViewController.swift */,
 				CC48F96B1CFC64F300124D0D /* CoreDataStack.swift */,
 				CC48F95A1CFC642F00124D0D /* Main.storyboard */,
@@ -317,6 +317,7 @@
 				CC48F9671CFC642F00124D0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

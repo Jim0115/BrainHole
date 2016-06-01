@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   override func viewDidLoad() {
     
     tableView.estimatedRowHeight = 100.0
+    addButton.enabled = false
     
     let fetchRequest = NSFetchRequest(entityName: "Team")
     fetchRequest.sortDescriptors = [NSSortDescriptor(key: "qualifyingZone", ascending: true), NSSortDescriptor(key: "wins", ascending: false), NSSortDescriptor(key: "teamName", ascending: true)]
@@ -30,7 +31,37 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     } catch let error as NSError {
       print(error.localizedDescription)
     }
+  }
+  
+  @IBAction func addTeam(sender: UIBarButtonItem) {
+    let alert = UIAlertController(title: "Secret Team", message: "Add a new team", preferredStyle: .Alert)
     
+    alert.addTextFieldWithConfigurationHandler { $0.placeholder = "Team Name" }
+    alert.addTextFieldWithConfigurationHandler { $0.placeholder = "Qualifying Zone" }
+    
+    alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+    alert.addAction(UIAlertAction(title: "Save", style: .Default) {
+      (_) in
+      print("Save")
+      let nameTextField = alert.textFields![0]
+      let zoneTextField = alert.textFields![1]
+      
+      let newTeam = NSEntityDescription.insertNewObjectForEntityForName("Team", inManagedObjectContext: self.coreDataStack.managedContext) as! Team
+      
+      newTeam.teamName = nameTextField.text
+      newTeam.qualifyingZone = zoneTextField.text
+      newTeam.imageName = "wenderland-flag"
+      
+      self.coreDataStack.saveContext()
+    })
+    presentViewController(alert, animated: true, completion: { sender.enabled = false })
+  }
+  
+  
+  override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+    if motion == .MotionShake {
+      addButton.enabled = true
+    }
   }
   
   // MARK: - table view data source
