@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC7F58D51CFEA5330060B359 /* DogWalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7F58D41CFEA5330060B359 /* DogWalkTests.swift */; };
 		CC8D9F241CF824AB001C6B93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D9F231CF824AB001C6B93 /* AppDelegate.swift */; };
 		CC8D9F261CF824AB001C6B93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D9F251CF824AB001C6B93 /* ViewController.swift */; };
 		CC8D9F291CF824AB001C6B93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC8D9F271CF824AB001C6B93 /* Main.storyboard */; };
@@ -20,7 +21,20 @@
 		CCD811421CF88859000195C4 /* Walk.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8113E1CF88859000195C4 /* Walk.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CC7F58D71CFEA5330060B359 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC8D9F181CF824AB001C6B93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC8D9F1F1CF824AB001C6B93;
+			remoteInfo = DogWalk;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		CC7F58D21CFEA5330060B359 /* DogWalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogWalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC7F58D41CFEA5330060B359 /* DogWalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogWalkTests.swift; sourceTree = "<group>"; };
+		CC7F58D61CFEA5330060B359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC8D9F201CF824AB001C6B93 /* DogWalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogWalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC8D9F231CF824AB001C6B93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC8D9F251CF824AB001C6B93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +51,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CC7F58CF1CFEA5330060B359 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CC8D9F1D1CF824AB001C6B93 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -47,10 +68,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC7F58D31CFEA5330060B359 /* DogWalkTests */ = {
+			isa = PBXGroup;
+			children = (
+				CC7F58D41CFEA5330060B359 /* DogWalkTests.swift */,
+				CC7F58D61CFEA5330060B359 /* Info.plist */,
+			);
+			path = DogWalkTests;
+			sourceTree = "<group>";
+		};
 		CC8D9F171CF824AB001C6B93 = {
 			isa = PBXGroup;
 			children = (
 				CC8D9F221CF824AB001C6B93 /* DogWalk */,
+				CC7F58D31CFEA5330060B359 /* DogWalkTests */,
 				CC8D9F211CF824AB001C6B93 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				CC8D9F201CF824AB001C6B93 /* DogWalk.app */,
+				CC7F58D21CFEA5330060B359 /* DogWalkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,6 +125,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CC7F58D11CFEA5330060B359 /* DogWalkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC7F58D91CFEA5330060B359 /* Build configuration list for PBXNativeTarget "DogWalkTests" */;
+			buildPhases = (
+				CC7F58CE1CFEA5330060B359 /* Sources */,
+				CC7F58CF1CFEA5330060B359 /* Frameworks */,
+				CC7F58D01CFEA5330060B359 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CC7F58D81CFEA5330060B359 /* PBXTargetDependency */,
+			);
+			name = DogWalkTests;
+			productName = DogWalkTests;
+			productReference = CC7F58D21CFEA5330060B359 /* DogWalkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CC8D9F1F1CF824AB001C6B93 /* DogWalk */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CC8D9F321CF824AB001C6B93 /* Build configuration list for PBXNativeTarget "DogWalk" */;
@@ -120,6 +170,11 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "王仕杰";
 				TargetAttributes = {
+					CC7F58D11CFEA5330060B359 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = J84HL5BDK2;
+						TestTargetID = CC8D9F1F1CF824AB001C6B93;
+					};
 					CC8D9F1F1CF824AB001C6B93 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = J84HL5BDK2;
@@ -140,11 +195,19 @@
 			projectRoot = "";
 			targets = (
 				CC8D9F1F1CF824AB001C6B93 /* DogWalk */,
+				CC7F58D11CFEA5330060B359 /* DogWalkTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CC7F58D01CFEA5330060B359 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CC8D9F1E1CF824AB001C6B93 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -158,6 +221,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CC7F58CE1CFEA5330060B359 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC7F58D51CFEA5330060B359 /* DogWalkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CC8D9F1C1CF824AB001C6B93 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -174,6 +245,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CC7F58D81CFEA5330060B359 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC8D9F1F1CF824AB001C6B93 /* DogWalk */;
+			targetProxy = CC7F58D71CFEA5330060B359 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CC8D9F271CF824AB001C6B93 /* Main.storyboard */ = {
@@ -195,6 +274,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CC7F58DA1CFEA5330060B359 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DogWalkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.neu.wangshijie.DogWalkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DogWalk.app/DogWalk";
+			};
+			name = Debug;
+		};
+		CC7F58DB1CFEA5330060B359 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DogWalkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.neu.wangshijie.DogWalkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DogWalk.app/DogWalk";
+			};
+			name = Release;
+		};
 		CC8D9F301CF824AB001C6B93 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -311,6 +414,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CC7F58D91CFEA5330060B359 /* Build configuration list for PBXNativeTarget "DogWalkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC7F58DA1CFEA5330060B359 /* Debug */,
+				CC7F58DB1CFEA5330060B359 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		CC8D9F1B1CF824AB001C6B93 /* Build configuration list for PBXProject "DogWalk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

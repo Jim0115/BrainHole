@@ -35,9 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       newTeam.teamName = teamJson["teamName"].string
       newTeam.qualifyingZone = teamJson["qualifyingZone"].string
       newTeam.wins = teamJson["wins"].int
+      
+      coreDataStack.saveContext()
     }
-    
-    coreDataStack.saveContext()
     print("imported \(newDataJson.count) teams")
   }
 

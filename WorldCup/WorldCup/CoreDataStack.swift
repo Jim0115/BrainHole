@@ -32,7 +32,7 @@ class CoreDataStack {
     let url = self.userDocumentDirectory.URLByAppendingPathComponent(self.modelName)
     let option = [NSMigratePersistentStoresAutomaticallyOption : true]
     do {
-      try coor.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: option)
+      try coor.addPersistentStoreWithType(NSInMemoryStoreType, configuration: nil, URL: url, options: option)
     } catch let error as NSError {
       print(error.localizedDescription)
     }

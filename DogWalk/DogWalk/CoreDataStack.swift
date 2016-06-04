@@ -5,7 +5,6 @@
 //  Created by 王仕杰 on 5/27/16.
 //  Copyright © 2016 王仕杰. All rights reserved.
 //
-
 import CoreData
 
 //class CoreDataStack {

@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CC8D9F1F1CF824AB001C6B93"
-               BuildableName = "DogWalk.app"
-               BlueprintName = "DogWalk"
-               ReferencedContainer = "container:DogWalk.xcodeproj">
+               BlueprintIdentifier = "CC9AFCC11D0280D800265560"
+               BuildableName = "TicTacToe.app"
+               BlueprintName = "TicTacToe"
+               ReferencedContainer = "container:TicTacToe.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,24 +28,14 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CC7F58D11CFEA5330060B359"
-               BuildableName = "DogWalkTests.xctest"
-               BlueprintName = "DogWalkTests"
-               ReferencedContainer = "container:DogWalk.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CC8D9F1F1CF824AB001C6B93"
-            BuildableName = "DogWalk.app"
-            BlueprintName = "DogWalk"
-            ReferencedContainer = "container:DogWalk.xcodeproj">
+            BlueprintIdentifier = "CC9AFCC11D0280D800265560"
+            BuildableName = "TicTacToe.app"
+            BlueprintName = "TicTacToe"
+            ReferencedContainer = "container:TicTacToe.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CC8D9F1F1CF824AB001C6B93"
-            BuildableName = "DogWalk.app"
-            BlueprintName = "DogWalk"
-            ReferencedContainer = "container:DogWalk.xcodeproj">
+            BlueprintIdentifier = "CC9AFCC11D0280D800265560"
+            BuildableName = "TicTacToe.app"
+            BlueprintName = "TicTacToe"
+            ReferencedContainer = "container:TicTacToe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -84,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CC8D9F1F1CF824AB001C6B93"
-            BuildableName = "DogWalk.app"
-            BlueprintName = "DogWalk"
-            ReferencedContainer = "container:DogWalk.xcodeproj">
+            BlueprintIdentifier = "CC9AFCC11D0280D800265560"
+            BuildableName = "TicTacToe.app"
+            BlueprintName = "TicTacToe"
+            ReferencedContainer = "container:TicTacToe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
