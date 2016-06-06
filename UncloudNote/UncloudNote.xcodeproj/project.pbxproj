@@ -8,19 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		CC7F58E91D01742F0060B359 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7F58E81D01742F0060B359 /* AppDelegate.swift */; };
-		CC7F58EB1D01742F0060B359 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7F58EA1D01742F0060B359 /* ViewController.swift */; };
 		CC7F58EE1D01742F0060B359 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC7F58EC1D01742F0060B359 /* Main.storyboard */; };
 		CC7F58F01D01742F0060B359 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC7F58EF1D01742F0060B359 /* Assets.xcassets */; };
 		CC7F58F31D01742F0060B359 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC7F58F11D01742F0060B359 /* LaunchScreen.storyboard */; };
 		CC7F58FC1D0174B00060B359 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC7F58FA1D0174B00060B359 /* Model.xcdatamodeld */; };
 		CC7F58FF1D0176200060B359 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7F58FE1D0176200060B359 /* CoreDataStack.swift */; };
 		CC7F59011D017A430060B359 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7F59001D017A430060B359 /* NoteTableViewCell.swift */; };
+		CCA50DC91D051C2200229084 /* NoteListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA50DC81D051C2200229084 /* NoteListTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CC7F58E51D01742F0060B359 /* UncloudNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UncloudNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7F58E81D01742F0060B359 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CC7F58EA1D01742F0060B359 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CC7F58ED1D01742F0060B359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC7F58EF1D01742F0060B359 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC7F58F21D01742F0060B359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -29,6 +28,7 @@
 		CC7F58FD1D0175280060B359 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
 		CC7F58FE1D0176200060B359 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		CC7F59001D017A430060B359 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		CCA50DC81D051C2200229084 /* NoteListTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteListTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				CC7F58E81D01742F0060B359 /* AppDelegate.swift */,
-				CC7F58EA1D01742F0060B359 /* ViewController.swift */,
 				CC7F58EC1D01742F0060B359 /* Main.storyboard */,
+				CCA50DC81D051C2200229084 /* NoteListTVC.swift */,
 				CC7F58FA1D0174B00060B359 /* Model.xcdatamodeld */,
 				CC7F58FE1D0176200060B359 /* CoreDataStack.swift */,
 				CC7F59001D017A430060B359 /* NoteTableViewCell.swift */,
@@ -146,9 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC7F58EB1D01742F0060B359 /* ViewController.swift in Sources */,
 				CC7F58E91D01742F0060B359 /* AppDelegate.swift in Sources */,
 				CC7F58FC1D0174B00060B359 /* Model.xcdatamodeld in Sources */,
+				CCA50DC91D051C2200229084 /* NoteListTVC.swift in Sources */,
 				CC7F59011D017A430060B359 /* NoteTableViewCell.swift in Sources */,
 				CC7F58FF1D0176200060B359 /* CoreDataStack.swift in Sources */,
 			);
@@ -302,6 +302,7 @@
 				CC7F58F91D01742F0060B359 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -312,7 +313,7 @@
 				CC7F58FD1D0175280060B359 /* Model 2.xcdatamodel */,
 				CC7F58FB1D0174B00060B359 /* Model.xcdatamodel */,
 			);
-			currentVersion = CC7F58FD1D0175280060B359 /* Model 2.xcdatamodel */;
+			currentVersion = CC7F58FB1D0174B00060B359 /* Model.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

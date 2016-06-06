@@ -13,6 +13,7 @@
 		CC9AFCDB1D0280EE00265560 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9AFCD81D0280EE00265560 /* Main.storyboard */; };
 		CC9AFCDC1D0280EE00265560 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AFCD91D0280EE00265560 /* GameView.swift */; };
 		CC9AFCDD1D0280EE00265560 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AFCDA1D0280EE00265560 /* ViewController.swift */; };
+		CC9AFCDF1D0281A800265560 /* GameAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AFCDE1D0281A800265560 /* GameAI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CC9AFCD71D0280EE00265560 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC9AFCD91D0280EE00265560 /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameView.swift; path = ../../../HelloWorld/HelloWorld/GameView.swift; sourceTree = "<group>"; };
 		CC9AFCDA1D0280EE00265560 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../../HelloWorld/HelloWorld/ViewController.swift; sourceTree = "<group>"; };
+		CC9AFCDE1D0281A800265560 /* GameAI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameAI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				CC9AFCD81D0280EE00265560 /* Main.storyboard */,
 				CC9AFCD91D0280EE00265560 /* GameView.swift */,
 				CC9AFCDA1D0280EE00265560 /* ViewController.swift */,
+				CC9AFCDE1D0281A800265560 /* GameAI.swift */,
 				CC9AFCCC1D0280D800265560 /* Assets.xcassets */,
 				CC9AFCCE1D0280D800265560 /* LaunchScreen.storyboard */,
 				CC9AFCD11D0280D800265560 /* Info.plist */,
@@ -142,6 +145,7 @@
 				CC9AFCDD1D0280EE00265560 /* ViewController.swift in Sources */,
 				CC9AFCDC1D0280EE00265560 /* GameView.swift in Sources */,
 				CC9AFCC61D0280D800265560 /* AppDelegate.swift in Sources */,
+				CC9AFCDF1D0281A800265560 /* GameAI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
