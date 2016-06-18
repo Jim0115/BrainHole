@@ -16,8 +16,8 @@ Swift：
 
     convenience init(item view1: AnyObject, attribute attr1: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toItem view2: AnyObject?, attribute attr2: NSLayoutAttribute, multiplier multiplier: CGFloat, constant c: CGFloat)
     
-![image](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/Art/view_formula_2x.png)
-![image](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/Art/attributes_2x.png)
+![image](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/Art/view_formula_2x.png =600x)
+![image](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/Art/attributes_2x.png =600x)
     
 ### NSLayoutRelation
 Objective-C：
@@ -154,7 +154,7 @@ Objective-C:
 `views`：一个字典，用于获取VFL中出现的View。无对应值同样可能导致Crash。
 >A dictionary of views that appear in the visual format string. The keys must be the string values used in the visual format string, and the values must be the view objects.
 
-![image](http://www.raywenderlich.com/wp-content/uploads/2015/07/VisualFormatLanguageOptionsImage.png)
+![image](http://www.raywenderlich.com/wp-content/uploads/2015/07/VisualFormatLanguageOptionsImage.png =600x)
 
 ### Step
 
