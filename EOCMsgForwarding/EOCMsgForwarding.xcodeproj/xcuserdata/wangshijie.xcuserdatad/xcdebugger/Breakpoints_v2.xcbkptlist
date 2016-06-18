@@ -10,11 +10,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EOCMsgForwarding/EOCAutoDictionary.m"
-            timestampString = "487729622.736521"
+            timestampString = "487913005.775329"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "autoDictionaryGetter()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EOCMsgForwarding/EOCAutoDictionary.m"
+            timestampString = "487913005.775329"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "autoDictionarySetter()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EOCMsgForwarding/EOCAutoDictionary.m"
-            timestampString = "487729622.736521"
+            timestampString = "487913005.775329"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "autoDictionaryGetter()"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "autoDictionarySetter()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

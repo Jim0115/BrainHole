@@ -13,10 +13,9 @@ int main(int argc, const char * argv[]) {
   @autoreleasepool {
     EOCAutoDictionary* dict = [[EOCAutoDictionary alloc] init];
     
-    dict.string = @"amazing";
-    NSLog(@"%@", dict.string);
-//    [dict setValue:@"haha" forKey:@"string"];
-//    NSLog(@"%@", [dict valueForKey:@"string"]);
+//    NSLog(@"%d", [dict respondsToSelector:@selector(stringFromDate:)]);
+    NSLog(@"%@", [(NSString *)dict uppercaseString]);
+    NSLog(@"%@", [(NSArray *)dict firstObject]);
   }
   return 0;
 }
