@@ -7,24 +7,40 @@
 //
 
 import UIKit
+import CoreData
 
-class NoteListTVC: UITableViewController {
+class NoteListTVC: UITableViewController, NSFetchedResultsControllerDelegate {
+  
+  let stack = CoreDataStack.sharedStack
+  
+  lazy var notes: NSFetchedResultsController = {
+    let fetchRequest = NSFetchRequest(entityName: "Note")
+    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateCreated", ascending: false)]
+    
+    let notes = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.stack.managedContext, sectionNameKeyPath: nil, cacheName: nil)
+    notes.delegate = self
+    return notes
+  }()
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    do {
+      try notes.performFetch()
+    } catch {
+      
+    }
   }
   
   // MARK: - Table view data source
   
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     // #warning Incomplete implementation, return the number of sections
-    return 0
+    return notes.sections!.count
   }
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     // #warning Incomplete implementation, return the number of rows
-    return 0
+    return notes.sections![section].numberOfObjects
   }
   
   /*

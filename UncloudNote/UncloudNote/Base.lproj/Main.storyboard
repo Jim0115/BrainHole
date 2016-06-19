@@ -1,25 +1,86 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iu6-M7-i5H">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Note ListTVC-->
         <scene sceneID="7QG-S2-DBO">
             <objects>
-                <tableViewController id="hh7-ja-DZt" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="TJP-Qr-eVn">
+                <tableViewController id="hh7-ja-DZt" customClass="NoteListTVC" customModule="UncloudNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="59" sectionHeaderHeight="28" sectionFooterHeight="28" id="TJP-Qr-eVn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="pOB-Z0-Ix1">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="note cell" rowHeight="59" id="pOB-Z0-Ix1" customClass="NoteTableViewCell" customModule="UncloudNote" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="59"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pOB-Z0-Ix1" id="sy8-Mm-1ot">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="58.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4w-rV-xSO">
+                                            <rect key="frame" x="8" y="8" width="584" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Modification Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLk-16-B0F">
+                                            <rect key="frame" x="8" y="36" width="148.5" height="16"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="pLk-16-B0F" firstAttribute="top" secondItem="d4w-rV-xSO" secondAttribute="bottom" constant="8" id="8Ow-x8-BT6"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="pLk-16-B0F" secondAttribute="leading" id="8d0-DC-2dJ"/>
+                                        <constraint firstAttribute="topMargin" secondItem="d4w-rV-xSO" secondAttribute="top" id="T7S-Mp-a7X"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="d4w-rV-xSO" secondAttribute="trailing" id="umZ-Uy-kcr"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="d4w-rV-xSO" secondAttribute="leading" id="wXg-2e-szi"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="noteImageCell" rowHeight="59" id="NqC-tN-3Du" customClass="NoteTableViewCell" customModule="UncloudNote" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="151" width="600" height="59"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NqC-tN-3Du" id="SWk-i9-cYN">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="58.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aS-cg-egE">
+                                            <rect key="frame" x="8" y="8" width="584" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Modification Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5M-vr-4qx">
+                                            <rect key="frame" x="8" y="36" width="148.5" height="16"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E0x-HH-D9C">
+                                            <rect key="frame" x="541.5" y="0.0" width="58.5" height="58.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="E0x-HH-D9C" secondAttribute="height" id="aSJ-vq-vZm"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="topMargin" secondItem="6aS-cg-egE" secondAttribute="top" id="7ku-5Z-nEO"/>
+                                        <constraint firstItem="Y5M-vr-4qx" firstAttribute="top" secondItem="6aS-cg-egE" secondAttribute="bottom" constant="8" id="Eb4-w2-n73"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="6aS-cg-egE" secondAttribute="leading" id="OfO-N2-mNZ"/>
+                                        <constraint firstItem="E0x-HH-D9C" firstAttribute="top" secondItem="SWk-i9-cYN" secondAttribute="top" id="gSg-CN-ScU"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="6aS-cg-egE" secondAttribute="trailing" id="hME-7O-Uiu"/>
+                                        <constraint firstAttribute="bottom" secondItem="E0x-HH-D9C" secondAttribute="bottom" id="i7o-ng-4tv"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="Y5M-vr-4qx" secondAttribute="leading" id="oGL-0Z-yDL"/>
+                                        <constraint firstAttribute="trailing" secondItem="E0x-HH-D9C" secondAttribute="trailing" id="uay-ZB-rle"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
