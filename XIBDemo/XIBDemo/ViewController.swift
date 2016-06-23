@@ -18,8 +18,8 @@ class ViewController: UIViewController {
     viewFromXib.translatesAutoresizingMaskIntoConstraints = false
 //    viewFromXib.frame = CGRect(x: 50, y: 50, width: 50, height: 50)
     view.addSubview(viewFromXib)
-    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-20-[view(300)]", options: [], metrics: ["width" : self.view.frame.height / 2], views: ["view" : viewFromXib]))
-    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|-100-[view(120)]", options: [], metrics: nil, views: ["view" : viewFromXib]))
+    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-20-[view]-|", options: [], metrics: ["width" : self.view.frame.height / 2], views: ["view" : viewFromXib]))
+    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|-100-[view]-|", options: [], metrics: nil, views: ["view" : viewFromXib]))
   }
 }
 
