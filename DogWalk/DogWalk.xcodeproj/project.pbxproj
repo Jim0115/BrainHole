@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC2872BD1D2506680013BA3A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2872BC1D2506680013BA3A /* CoreDataStack.swift */; };
 		CC7F58D51CFEA5330060B359 /* DogWalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7F58D41CFEA5330060B359 /* DogWalkTests.swift */; };
 		CC8D9F241CF824AB001C6B93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D9F231CF824AB001C6B93 /* AppDelegate.swift */; };
 		CC8D9F261CF824AB001C6B93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D9F251CF824AB001C6B93 /* ViewController.swift */; };
@@ -14,7 +15,6 @@
 		CC8D9F2B1CF824AB001C6B93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC8D9F2A1CF824AB001C6B93 /* Assets.xcassets */; };
 		CC8D9F2E1CF824AB001C6B93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC8D9F2C1CF824AB001C6B93 /* LaunchScreen.storyboard */; };
 		CC8D9F381CF824DF001C6B93 /* DogWalk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC8D9F361CF824DF001C6B93 /* DogWalk.xcdatamodeld */; };
-		CC8D9F3E1CF832C6001C6B93 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D9F3D1CF832C6001C6B93 /* CoreDataStack.swift */; };
 		CCD8113F1CF88859000195C4 /* Dog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8113B1CF88859000195C4 /* Dog+CoreDataProperties.swift */; };
 		CCD811401CF88859000195C4 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8113C1CF88859000195C4 /* Dog.swift */; };
 		CCD811411CF88859000195C4 /* Walk+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8113D1CF88859000195C4 /* Walk+CoreDataProperties.swift */; };
@@ -32,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC2872BC1D2506680013BA3A /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		CC7F58D21CFEA5330060B359 /* DogWalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogWalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7F58D41CFEA5330060B359 /* DogWalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogWalkTests.swift; sourceTree = "<group>"; };
 		CC7F58D61CFEA5330060B359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		CC8D9F2D1CF824AB001C6B93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC8D9F2F1CF824AB001C6B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC8D9F371CF824DF001C6B93 /* DogWalk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DogWalk.xcdatamodel; sourceTree = "<group>"; };
-		CC8D9F3D1CF832C6001C6B93 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		CCD8113B1CF88859000195C4 /* Dog+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dog+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CCD8113C1CF88859000195C4 /* Dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		CCD8113D1CF88859000195C4 /* Walk+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Walk+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -105,8 +105,8 @@
 				CC8D9F231CF824AB001C6B93 /* AppDelegate.swift */,
 				CC8D9F251CF824AB001C6B93 /* ViewController.swift */,
 				CC8D9F271CF824AB001C6B93 /* Main.storyboard */,
+				CC2872BC1D2506680013BA3A /* CoreDataStack.swift */,
 				CC8D9F361CF824DF001C6B93 /* DogWalk.xcdatamodeld */,
-				CC8D9F3D1CF832C6001C6B93 /* CoreDataStack.swift */,
 				CC8D9F351CF824B6001C6B93 /* Others */,
 			);
 			path = DogWalk;
@@ -240,7 +240,7 @@
 				CCD811421CF88859000195C4 /* Walk.swift in Sources */,
 				CC8D9F381CF824DF001C6B93 /* DogWalk.xcdatamodeld in Sources */,
 				CC8D9F241CF824AB001C6B93 /* AppDelegate.swift in Sources */,
-				CC8D9F3E1CF832C6001C6B93 /* CoreDataStack.swift in Sources */,
+				CC2872BD1D2506680013BA3A /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +421,7 @@
 				CC7F58DB1CFEA5330060B359 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CC8D9F1B1CF824AB001C6B93 /* Build configuration list for PBXProject "DogWalk" */ = {
 			isa = XCConfigurationList;

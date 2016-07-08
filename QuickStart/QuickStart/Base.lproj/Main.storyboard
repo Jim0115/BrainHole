@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QuickStart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daX-Ed-3xj">
+                                <rect key="frame" x="281" y="285" width="38" height="30"/>
+                                <state key="normal" title="Open"/>
+                                <connections>
+                                    <action selector="open" destination="BYZ-38-t0r" eventType="touchUpInside" id="SCe-bC-cca"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OfE-n0-Ln0">
+                                <rect key="frame" x="20" y="247" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="OfE-n0-Ln0" secondAttribute="trailing" id="AVd-K4-Amk"/>
+                            <constraint firstItem="daX-Ed-3xj" firstAttribute="top" secondItem="OfE-n0-Ln0" secondAttribute="bottom" constant="8" symbolic="YES" id="QXd-Jv-mPC"/>
+                            <constraint firstItem="OfE-n0-Ln0" firstAttribute="centerX" secondItem="daX-Ed-3xj" secondAttribute="centerX" id="kUy-GC-E9o"/>
+                            <constraint firstItem="daX-Ed-3xj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ktX-yE-Yxm"/>
+                            <constraint firstItem="daX-Ed-3xj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zyA-6k-BzN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="field" destination="OfE-n0-Ln0" id="3s8-Ap-C4d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="378" y="324"/>
+        </scene>
+    </scenes>
+</document>
