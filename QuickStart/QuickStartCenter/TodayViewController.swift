@@ -15,7 +15,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
   
   
   lazy var urls: [NSURL] = {
-    return [NSURL(string: "alipayqr://platformapi/startapp?saId=20000056")!]
+    let strings = ["alipayqr://platformapi/startapp?saId=20000056", "alipayqr://platformapi/startapp?saId=10000014", "weixin://dl/favorites"]
+    return strings.map { NSURL(string: $0)! }
   }()
   
   lazy var images: [String] = {
@@ -50,7 +51,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
   }
   
   func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return images.count //urls.count
+    return images.count // urls.count
   }
   
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -63,7 +64,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
   }
   
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-    print(indexPath)
+    extensionContext?.openURL(urls[indexPath.row], completionHandler: nil)
   }
   
 }
