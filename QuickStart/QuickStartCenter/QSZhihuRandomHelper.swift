@@ -23,7 +23,8 @@ class QSZhihuRandomHelper: NSObject {
       } else {
         if let data = data {
           let result = NSString(data: data, encoding: NSUTF8StringEncoding)!
-          let range = rex.firstMatchInString(result as String, options: [], range: NSRange(location: 0, length: result.length))!.range
+          let results = rex.matchesInString(result as String, options: [], range: NSRange(location: 0, length: result.length))
+          let range = results.randomElement().range
           let str = result.substringWithRange(range)
           let url = "zhihu://questions/\(str.componentsSeparatedByString("/").last!)"
           completeHandler(NSURL(string: url)!)
@@ -31,5 +32,11 @@ class QSZhihuRandomHelper: NSObject {
       }
     }
     task.resume()
+  }
+}
+
+extension Array {
+  func randomElement() -> Element {
+    return self[0 + Int(arc4random_uniform(UInt32(self.count)))]
   }
 }
