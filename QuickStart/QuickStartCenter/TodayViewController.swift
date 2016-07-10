@@ -14,9 +14,9 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
   @IBOutlet weak var collectionView: UICollectionView!
   
   
-  lazy var urls: [NSURL] = {
-    let strings = ["alipayqr://platformapi/startapp?saId=20000056", "alipayqr://platformapi/startapp?saId=10000014", "weixin://dl/moments"]
-    return strings.map { NSURL(string: $0)! }
+  lazy var urls: [String] = {
+    return ["alipayqr://platformapi/startapp?saId=20000056", "alipayqr://platformapi/startapp?saId=10000014", "weixin://dl/moments", "weixin://dl/scan"]
+//    return strings.map { NSURL(string: $0)! }
   }()
   
   lazy var images: [String] = {
@@ -38,9 +38,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
     super.viewDidLoad()
     print(images)
     preferredContentSize = CGSize(width: 0, height: 200)
-    QSZhihuRandomHelper.randomAddress { (url) in
-      print(url)
-    }
   }
   
   func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
@@ -61,7 +58,12 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
   }
   
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-    extensionContext?.openURL(urls[indexPath.row], completionHandler: nil)
+    if indexPath.row == 6 {
+      QSZhihuRandomHelper.randomAddress { [weak self] (url) in
+        self?.extensionContext?.openURL(url, completionHandler: nil)
+      }
+    }
+    extensionContext?.openURL(NSURL(string: urls[indexPath.row])!, completionHandler: nil)
   }
   
 }

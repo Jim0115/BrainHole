@@ -13,6 +13,8 @@
 		CC713C7D1D2F266E00E75B5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC713C7B1D2F266E00E75B5A /* Main.storyboard */; };
 		CC713C7F1D2F266E00E75B5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC713C7E1D2F266E00E75B5A /* Assets.xcassets */; };
 		CC713C821D2F266E00E75B5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC713C801D2F266E00E75B5A /* LaunchScreen.storyboard */; };
+		CC9E7F651D3236F0007416D5 /* QSZhihuRandomHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E7F641D3236F0007416D5 /* QSZhihuRandomHelper.swift */; };
+		CC9E7F671D325273007416D5 /* WX_Scan.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9E7F661D325273007416D5 /* WX_Scan.png */; };
 		CCA1DF101D2F33EF0085A59D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA1DEFC1D2F31D40085A59D /* NotificationCenter.framework */; };
 		CCA1DF131D2F33EF0085A59D /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA1DF121D2F33EF0085A59D /* TodayViewController.swift */; };
 		CCA1DF161D2F33EF0085A59D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA1DF141D2F33EF0085A59D /* MainInterface.storyboard */; };
@@ -56,6 +58,8 @@
 		CC713C7E1D2F266E00E75B5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC713C811D2F266E00E75B5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC713C831D2F266E00E75B5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC9E7F641D3236F0007416D5 /* QSZhihuRandomHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSZhihuRandomHelper.swift; sourceTree = "<group>"; };
+		CC9E7F661D325273007416D5 /* WX_Scan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WX_Scan.png; sourceTree = "<group>"; };
 		CCA1DEFC1D2F31D40085A59D /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		CCA1DF0F1D2F33EF0085A59D /* QuickStartCenter.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QuickStartCenter.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA1DF121D2F33EF0085A59D /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 			children = (
 				CCA1DF3D1D2F556B0085A59D /* QuickStartCenter.entitlements */,
 				CCA1DF121D2F33EF0085A59D /* TodayViewController.swift */,
+				CC9E7F641D3236F0007416D5 /* QSZhihuRandomHelper.swift */,
 				CCA1DF141D2F33EF0085A59D /* MainInterface.storyboard */,
 				CCA1DF241D2F422F0085A59D /* Images */,
 				CCA1DF1E1D2F3C070085A59D /* ImageCell.swift */,
@@ -147,6 +152,7 @@
 				CCA1DF3F1D2F80850085A59D /* WX_Moment.png */,
 				CCA1DF251D2F43410085A59D /* Ali_Pay.png */,
 				CC6065441D2FA19F00C29DE7 /* Ali_Xiu.png */,
+				CC9E7F661D325273007416D5 /* WX_Scan.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -259,6 +265,7 @@
 				CCA1DF3E1D2F55F50085A59D /* Assets.xcassets in Resources */,
 				CCA1DF401D2F80850085A59D /* WX_Moment.png in Resources */,
 				CCA1DF261D2F43410085A59D /* Ali_Pay.png in Resources */,
+				CC9E7F671D325273007416D5 /* WX_Scan.png in Resources */,
 				CC6065451D2FA19F00C29DE7 /* Ali_Xiu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +288,7 @@
 			files = (
 				CCA1DF131D2F33EF0085A59D /* TodayViewController.swift in Sources */,
 				CCA1DF1F1D2F3C070085A59D /* ImageCell.swift in Sources */,
+				CC9E7F651D3236F0007416D5 /* QSZhihuRandomHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
