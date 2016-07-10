@@ -15,7 +15,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
   
   
   lazy var urls: [NSURL] = {
-    let strings = ["alipayqr://platformapi/startapp?saId=20000056", "alipayqr://platformapi/startapp?saId=10000014", "weixin://dl/favorites"]
+    let strings = ["alipayqr://platformapi/startapp?saId=20000056", "alipayqr://platformapi/startapp?saId=10000014", "weixin://dl/moments"]
     return strings.map { NSURL(string: $0)! }
   }()
   
@@ -38,15 +38,12 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
     super.viewDidLoad()
     print(images)
     preferredContentSize = CGSize(width: 0, height: 200)
+    QSZhihuRandomHelper.randomAddress { (url) in
+      print(url)
+    }
   }
   
   func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
-    // Perform any setup necessary in order to update the view.
-    
-    // If an error is encountered, use NCUpdateResult.Failed
-    // If there's no update required, use NCUpdateResult.NoData
-    // If there's an update, use NCUpdateResult.NewData
-    
     completionHandler(NCUpdateResult.NewData)
   }
   
