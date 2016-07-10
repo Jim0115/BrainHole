@@ -58,12 +58,13 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
   }
   
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-    if indexPath.row == 6 {
+    if indexPath.row == 4 {
       QSZhihuRandomHelper.randomAddress { [weak self] (url) in
         self?.extensionContext?.openURL(url, completionHandler: nil)
       }
+    } else {
+      extensionContext?.openURL(NSURL(string: urls[indexPath.row])!, completionHandler: nil)
     }
-    extensionContext?.openURL(NSURL(string: urls[indexPath.row])!, completionHandler: nil)
   }
   
 }
