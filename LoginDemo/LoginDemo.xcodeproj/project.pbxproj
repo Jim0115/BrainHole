@@ -10,7 +10,7 @@
 		CC9E7F7C1D33665F007416D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9E7F7B1D33665F007416D5 /* main.m */; };
 		CC9E7F7F1D33665F007416D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9E7F7E1D33665F007416D5 /* AppDelegate.m */; };
 		CC9E7F821D33665F007416D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9E7F811D33665F007416D5 /* ViewController.m */; };
-		CC9E7F851D33665F007416D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9E7F831D33665F007416D5 /* Main.storyboard */; };
+		CC9E7F851D33665F007416D5 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9E7F831D33665F007416D5 /* Login.storyboard */; };
 		CC9E7F871D33665F007416D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC9E7F861D33665F007416D5 /* Assets.xcassets */; };
 		CC9E7F8A1D33665F007416D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9E7F881D33665F007416D5 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -22,7 +22,7 @@
 		CC9E7F7E1D33665F007416D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CC9E7F801D33665F007416D5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		CC9E7F811D33665F007416D5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		CC9E7F841D33665F007416D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CC9E7F841D33665F007416D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		CC9E7F861D33665F007416D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC9E7F891D33665F007416D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC9E7F8B1D33665F007416D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 				CC9E7F7E1D33665F007416D5 /* AppDelegate.m */,
 				CC9E7F801D33665F007416D5 /* ViewController.h */,
 				CC9E7F811D33665F007416D5 /* ViewController.m */,
-				CC9E7F831D33665F007416D5 /* Main.storyboard */,
+				CC9E7F831D33665F007416D5 /* Login.storyboard */,
 				CC9E7F861D33665F007416D5 /* Assets.xcassets */,
 				CC9E7F881D33665F007416D5 /* LaunchScreen.storyboard */,
 				CC9E7F8B1D33665F007416D5 /* Info.plist */,
@@ -139,7 +139,7 @@
 			files = (
 				CC9E7F8A1D33665F007416D5 /* LaunchScreen.storyboard in Resources */,
 				CC9E7F871D33665F007416D5 /* Assets.xcassets in Resources */,
-				CC9E7F851D33665F007416D5 /* Main.storyboard in Resources */,
+				CC9E7F851D33665F007416D5 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,12 +159,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CC9E7F831D33665F007416D5 /* Main.storyboard */ = {
+		CC9E7F831D33665F007416D5 /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CC9E7F841D33665F007416D5 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 		CC9E7F881D33665F007416D5 /* LaunchScreen.storyboard */ = {
@@ -266,10 +266,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LoginDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.neu.wangshijie.LoginDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -277,10 +280,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LoginDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.neu.wangshijie.LoginDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
