@@ -15,8 +15,8 @@
 		CC713C821D2F266E00E75B5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC713C801D2F266E00E75B5A /* LaunchScreen.storyboard */; };
 		CC9E7F651D3236F0007416D5 /* QSZhihuRandomHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E7F641D3236F0007416D5 /* QSZhihuRandomHelper.swift */; };
 		CC9E7F671D325273007416D5 /* 4.WX_Scan.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9E7F661D325273007416D5 /* 4.WX_Scan.png */; };
-		CC9E7F6B1D326BF5007416D5 /* 6.Zhi_Random.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9E7F6A1D326BF5007416D5 /* 6.Zhi_Random.png */; };
-		CC9E7F6D1D33346C007416D5 /* 5.FeedBack.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9E7F6C1D33346C007416D5 /* 5.FeedBack.png */; };
+		CC9E7F6B1D326BF5007416D5 /* 5.Zhi_Random.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9E7F6A1D326BF5007416D5 /* 5.Zhi_Random.png */; };
+		CC9E7F6D1D33346C007416D5 /* 6.FeedBack.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9E7F6C1D33346C007416D5 /* 6.FeedBack.png */; };
 		CCA1DF101D2F33EF0085A59D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA1DEFC1D2F31D40085A59D /* NotificationCenter.framework */; };
 		CCA1DF131D2F33EF0085A59D /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA1DF121D2F33EF0085A59D /* TodayViewController.swift */; };
 		CCA1DF161D2F33EF0085A59D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA1DF141D2F33EF0085A59D /* MainInterface.storyboard */; };
@@ -62,8 +62,8 @@
 		CC713C831D2F266E00E75B5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC9E7F641D3236F0007416D5 /* QSZhihuRandomHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSZhihuRandomHelper.swift; sourceTree = "<group>"; };
 		CC9E7F661D325273007416D5 /* 4.WX_Scan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.WX_Scan.png; sourceTree = "<group>"; };
-		CC9E7F6A1D326BF5007416D5 /* 6.Zhi_Random.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.Zhi_Random.png; sourceTree = "<group>"; };
-		CC9E7F6C1D33346C007416D5 /* 5.FeedBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.FeedBack.png; sourceTree = "<group>"; };
+		CC9E7F6A1D326BF5007416D5 /* 5.Zhi_Random.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.Zhi_Random.png; sourceTree = "<group>"; };
+		CC9E7F6C1D33346C007416D5 /* 6.FeedBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.FeedBack.png; sourceTree = "<group>"; };
 		CCA1DEFC1D2F31D40085A59D /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		CCA1DF0F1D2F33EF0085A59D /* QuickStartCenter.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QuickStartCenter.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA1DF121D2F33EF0085A59D /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -157,8 +157,8 @@
 				CC6065441D2FA19F00C29DE7 /* 2.Ali_Xiu.png */,
 				CCA1DF3F1D2F80850085A59D /* 3.WX_Moment.png */,
 				CC9E7F661D325273007416D5 /* 4.WX_Scan.png */,
-				CC9E7F6C1D33346C007416D5 /* 5.FeedBack.png */,
-				CC9E7F6A1D326BF5007416D5 /* 6.Zhi_Random.png */,
+				CC9E7F6A1D326BF5007416D5 /* 5.Zhi_Random.png */,
+				CC9E7F6C1D33346C007416D5 /* 6.FeedBack.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -268,9 +268,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCA1DF161D2F33EF0085A59D /* MainInterface.storyboard in Resources */,
-				CC9E7F6D1D33346C007416D5 /* 5.FeedBack.png in Resources */,
+				CC9E7F6D1D33346C007416D5 /* 6.FeedBack.png in Resources */,
 				CCA1DF3E1D2F55F50085A59D /* Assets.xcassets in Resources */,
-				CC9E7F6B1D326BF5007416D5 /* 6.Zhi_Random.png in Resources */,
+				CC9E7F6B1D326BF5007416D5 /* 5.Zhi_Random.png in Resources */,
 				CCA1DF401D2F80850085A59D /* 3.WX_Moment.png in Resources */,
 				CCA1DF261D2F43410085A59D /* 1.Ali_Pay.png in Resources */,
 				CC9E7F671D325273007416D5 /* 4.WX_Scan.png in Resources */,

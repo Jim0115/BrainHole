@@ -15,7 +15,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
   
   
   lazy var urls: [String] = {
-    return ["alipayqr://platformapi/startapp?saId=20000056", "alipayqr://platformapi/startapp?saId=10000014", "weixin://dl/moments", "weixin://dl/scan", "sms:763240186@qq.com"]
+    return ["alipayqr://platformapi/startapp?saId=20000056", "alipayqr://platformapi/startapp?saId=10000014", "weixin://dl/moments", "weixin://dl/scan", "", "sms:763240186@qq.com"]
 //    return strings.map { NSURL(string: $0)! }
   }()
   
@@ -58,7 +58,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
   }
   
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-    if indexPath.row == 5 {
+    if indexPath.row == 4 {
       QSZhihuRandomHelper.randomAddress { [weak self] (url) in
         self?.extensionContext?.openURL(url, completionHandler: nil)
       }
