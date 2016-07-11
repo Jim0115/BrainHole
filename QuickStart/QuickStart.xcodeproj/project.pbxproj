@@ -7,23 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC6065451D2FA19F00C29DE7 /* Ali_Xiu.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6065441D2FA19F00C29DE7 /* Ali_Xiu.png */; };
+		CC6065451D2FA19F00C29DE7 /* 2.Ali_Xiu.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6065441D2FA19F00C29DE7 /* 2.Ali_Xiu.png */; };
 		CC713C781D2F266E00E75B5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC713C771D2F266E00E75B5A /* AppDelegate.swift */; };
 		CC713C7A1D2F266E00E75B5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC713C791D2F266E00E75B5A /* ViewController.swift */; };
 		CC713C7D1D2F266E00E75B5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC713C7B1D2F266E00E75B5A /* Main.storyboard */; };
 		CC713C7F1D2F266E00E75B5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC713C7E1D2F266E00E75B5A /* Assets.xcassets */; };
 		CC713C821D2F266E00E75B5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC713C801D2F266E00E75B5A /* LaunchScreen.storyboard */; };
 		CC9E7F651D3236F0007416D5 /* QSZhihuRandomHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E7F641D3236F0007416D5 /* QSZhihuRandomHelper.swift */; };
-		CC9E7F671D325273007416D5 /* WX_Scan.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9E7F661D325273007416D5 /* WX_Scan.png */; };
-		CC9E7F6B1D326BF5007416D5 /* Zhi_Random.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9E7F6A1D326BF5007416D5 /* Zhi_Random.png */; };
+		CC9E7F671D325273007416D5 /* 4.WX_Scan.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9E7F661D325273007416D5 /* 4.WX_Scan.png */; };
+		CC9E7F6B1D326BF5007416D5 /* 6.Zhi_Random.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9E7F6A1D326BF5007416D5 /* 6.Zhi_Random.png */; };
+		CC9E7F6D1D33346C007416D5 /* 5.FeedBack.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9E7F6C1D33346C007416D5 /* 5.FeedBack.png */; };
 		CCA1DF101D2F33EF0085A59D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA1DEFC1D2F31D40085A59D /* NotificationCenter.framework */; };
 		CCA1DF131D2F33EF0085A59D /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA1DF121D2F33EF0085A59D /* TodayViewController.swift */; };
 		CCA1DF161D2F33EF0085A59D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA1DF141D2F33EF0085A59D /* MainInterface.storyboard */; };
 		CCA1DF1A1D2F33EF0085A59D /* QuickStartCenter.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CCA1DF0F1D2F33EF0085A59D /* QuickStartCenter.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CCA1DF1F1D2F3C070085A59D /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA1DF1E1D2F3C070085A59D /* ImageCell.swift */; };
-		CCA1DF261D2F43410085A59D /* Ali_Pay.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA1DF251D2F43410085A59D /* Ali_Pay.png */; };
+		CCA1DF261D2F43410085A59D /* 1.Ali_Pay.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA1DF251D2F43410085A59D /* 1.Ali_Pay.png */; };
 		CCA1DF3E1D2F55F50085A59D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC713C7E1D2F266E00E75B5A /* Assets.xcassets */; };
-		CCA1DF401D2F80850085A59D /* WX_Moment.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA1DF3F1D2F80850085A59D /* WX_Moment.png */; };
+		CCA1DF401D2F80850085A59D /* 3.WX_Moment.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA1DF3F1D2F80850085A59D /* 3.WX_Moment.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CC6065441D2FA19F00C29DE7 /* Ali_Xiu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ali_Xiu.png; sourceTree = "<group>"; };
+		CC6065441D2FA19F00C29DE7 /* 2.Ali_Xiu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.Ali_Xiu.png; sourceTree = "<group>"; };
 		CC713C741D2F266E00E75B5A /* QuickStart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickStart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC713C771D2F266E00E75B5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC713C791D2F266E00E75B5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,18 +61,19 @@
 		CC713C811D2F266E00E75B5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC713C831D2F266E00E75B5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC9E7F641D3236F0007416D5 /* QSZhihuRandomHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSZhihuRandomHelper.swift; sourceTree = "<group>"; };
-		CC9E7F661D325273007416D5 /* WX_Scan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WX_Scan.png; sourceTree = "<group>"; };
-		CC9E7F6A1D326BF5007416D5 /* Zhi_Random.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zhi_Random.png; sourceTree = "<group>"; };
+		CC9E7F661D325273007416D5 /* 4.WX_Scan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.WX_Scan.png; sourceTree = "<group>"; };
+		CC9E7F6A1D326BF5007416D5 /* 6.Zhi_Random.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.Zhi_Random.png; sourceTree = "<group>"; };
+		CC9E7F6C1D33346C007416D5 /* 5.FeedBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.FeedBack.png; sourceTree = "<group>"; };
 		CCA1DEFC1D2F31D40085A59D /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		CCA1DF0F1D2F33EF0085A59D /* QuickStartCenter.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QuickStartCenter.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA1DF121D2F33EF0085A59D /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		CCA1DF151D2F33EF0085A59D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		CCA1DF171D2F33EF0085A59D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCA1DF1E1D2F3C070085A59D /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
-		CCA1DF251D2F43410085A59D /* Ali_Pay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ali_Pay.png; sourceTree = "<group>"; };
+		CCA1DF251D2F43410085A59D /* 1.Ali_Pay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.Ali_Pay.png; sourceTree = "<group>"; };
 		CCA1DF3C1D2F55600085A59D /* QuickStart.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = QuickStart.entitlements; sourceTree = "<group>"; };
 		CCA1DF3D1D2F556B0085A59D /* QuickStartCenter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = QuickStartCenter.entitlements; sourceTree = "<group>"; };
-		CCA1DF3F1D2F80850085A59D /* WX_Moment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WX_Moment.png; sourceTree = "<group>"; };
+		CCA1DF3F1D2F80850085A59D /* 3.WX_Moment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.WX_Moment.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,11 +153,12 @@
 		CCA1DF241D2F422F0085A59D /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				CCA1DF3F1D2F80850085A59D /* WX_Moment.png */,
-				CCA1DF251D2F43410085A59D /* Ali_Pay.png */,
-				CC6065441D2FA19F00C29DE7 /* Ali_Xiu.png */,
-				CC9E7F6A1D326BF5007416D5 /* Zhi_Random.png */,
-				CC9E7F661D325273007416D5 /* WX_Scan.png */,
+				CCA1DF251D2F43410085A59D /* 1.Ali_Pay.png */,
+				CC6065441D2FA19F00C29DE7 /* 2.Ali_Xiu.png */,
+				CCA1DF3F1D2F80850085A59D /* 3.WX_Moment.png */,
+				CC9E7F661D325273007416D5 /* 4.WX_Scan.png */,
+				CC9E7F6C1D33346C007416D5 /* 5.FeedBack.png */,
+				CC9E7F6A1D326BF5007416D5 /* 6.Zhi_Random.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -265,12 +268,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCA1DF161D2F33EF0085A59D /* MainInterface.storyboard in Resources */,
+				CC9E7F6D1D33346C007416D5 /* 5.FeedBack.png in Resources */,
 				CCA1DF3E1D2F55F50085A59D /* Assets.xcassets in Resources */,
-				CC9E7F6B1D326BF5007416D5 /* Zhi_Random.png in Resources */,
-				CCA1DF401D2F80850085A59D /* WX_Moment.png in Resources */,
-				CCA1DF261D2F43410085A59D /* Ali_Pay.png in Resources */,
-				CC9E7F671D325273007416D5 /* WX_Scan.png in Resources */,
-				CC6065451D2FA19F00C29DE7 /* Ali_Xiu.png in Resources */,
+				CC9E7F6B1D326BF5007416D5 /* 6.Zhi_Random.png in Resources */,
+				CCA1DF401D2F80850085A59D /* 3.WX_Moment.png in Resources */,
+				CCA1DF261D2F43410085A59D /* 1.Ali_Pay.png in Resources */,
+				CC9E7F671D325273007416D5 /* 4.WX_Scan.png in Resources */,
+				CC6065451D2FA19F00C29DE7 /* 2.Ali_Xiu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

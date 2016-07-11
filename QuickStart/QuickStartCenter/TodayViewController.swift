@@ -52,7 +52,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier("reuse cell", forIndexPath: indexPath) as! ImageCell
     
     cell.imageView.image = UIImage(named: images[indexPath.row])
-    cell.titleLabel.text = images[indexPath.row].componentsSeparatedByString(".")[0]
+    cell.titleLabel.text = images[indexPath.row].componentsSeparatedByString(".")[1]
     
     return cell
   }
