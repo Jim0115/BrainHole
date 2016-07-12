@@ -31,20 +31,28 @@
                                                      green:0.75
                                                       blue:0.98
                                                      alpha:1];
-
   
-  [[NSNotificationCenter defaultCenter] addObserver:self
-                                           selector:@selector(keyboardStatusWillChange:)
-                                               name:UIKeyboardWillChangeFrameNotification
-                                             object:nil];
+  
+  //  [[NSNotificationCenter defaultCenter] addObserver:self
+  //                                           selector:@selector(keyboardStatusWillChange:)
+  //                                               name:UIKeyboardWillChangeFrameNotification
+  //                                             object:nil];
+  
+  __weak typeof(self) weakSelf = self;
+  [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillChangeFrameNotification
+                                                    object:nil
+                                                     queue:[NSOperationQueue mainQueue]
+                                                usingBlock:^(NSNotification * _Nonnull note) {
+                                                  [weakSelf keyboardStatusWillChange:note];
+                                                }];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
   [super viewWillDisappear:animated];
   
-  [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                  name:UIKeyboardWillChangeFrameNotification
-                                                object:nil];
+  //  [[NSNotificationCenter defaultCenter] removeObserver:self
+  //                                                  name:UIKeyboardWillChangeFrameNotification
+  //                                                object:nil];
 }
 
 - (void)keyboardStatusWillChange:(NSNotification *)noti {
@@ -56,12 +64,13 @@
   
   self.buttonCenterYConstraint.constant = difference < 0 ? -120 : 0;
   self.logoViewTopConstraint.constant = self.buttonCenterYConstraint.constant;
-
+  
   [UIView animateWithDuration:0.25
                    animations:^{
                      [self.view layoutIfNeeded];
                      self.registerButton.alpha = self.buttonCenterYConstraint.constant == 0 ? 1 : 0;
                    }];
+  NSLog(@"noti");
 }
 
 #pragma mark - UITextFieldDelegate
@@ -112,4 +121,7 @@
   self.loginButton.enabled = enable;
 }
 
+- (void)dealloc {
+  NSLog(@"dealloc");
+}
 @end

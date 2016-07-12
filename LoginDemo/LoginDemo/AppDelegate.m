@@ -19,11 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   
-  _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//  _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   
-  _window.rootViewController = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateViewControllerWithIdentifier:@"login"];
+//  _window.rootViewController = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateViewControllerWithIdentifier:@"login"];
   
-  [_window makeKeyAndVisible];
+//  [_window makeKeyAndVisible];
   
   return YES;
 }
