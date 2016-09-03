@@ -44,7 +44,7 @@ class ContactHelper {
     CoreDataStack.sharedInstance.saveContext()
   }
   
-  func insertContact(firstName firstName: String?, lastName: String?, telephone: String?, email: String?) {
+  func insertContact(firstName firstName: String? = nil, lastName: String? = nil, telephone: String? = nil, email: String? = nil) {
     let newContact = NSEntityDescription.insertNewObjectForEntityForName("Contact", inManagedObjectContext: context) as! Contact
     
     newContact.firstName = firstName
