@@ -16,7 +16,7 @@ class ContactHelper {
   
   private let context = CoreDataStack.sharedInstance.managedContext
   
-  var allContact: [Contact] {
+  var allContacts: [Contact] {
     get {
       let fetchRequest = NSFetchRequest(entityName: "Contact")
       fetchRequest.sortDescriptors = [NSSortDescriptor(key: "firstName", ascending: true)]
