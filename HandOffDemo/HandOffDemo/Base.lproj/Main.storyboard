@@ -60,9 +60,7 @@
                     <navigationItem key="navigationItem" title="My Contacts" id="YuV-uI-Lph">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="LbO-8b-WzC">
                             <connections>
-                                <segue destination="CCg-Wb-yId" kind="show" identifier="idSegueEditContact" id="K6M-Ox-3F2">
-                                    <nil key="action"/>
-                                </segue>
+                                <segue destination="kzu-9P-blv" kind="presentation" identifier="idSeguePersentAddContact" id="K6M-Ox-3F2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -71,14 +69,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pn6-bu-C5M" sceneMemberID="firstResponder"/>
-                <exit id="wrL-og-ljg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1257" y="417"/>
         </scene>
-        <!--Edit Contact-->
+        <!--New Contact-->
         <scene sceneID="2ou-f1-zxf">
             <objects>
-                <viewController id="CCg-Wb-yId" customClass="EditContactViewController" customModule="HandOffDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CCg-Wb-yId" customClass="NewContactViewController" customModule="HandOffDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CaQ-6W-Qh8"/>
                         <viewControllerLayoutGuide type="bottom" id="2sg-4z-fVs"/>
@@ -90,7 +87,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I21-ff-83n">
                                 <rect key="frame" x="12" y="72" width="576" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="CCg-Wb-yId" id="lsX-aA-Sw1"/>
                                 </connections>
@@ -98,7 +95,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zxp-sh-2Pt">
                                 <rect key="frame" x="12" y="110" width="576" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="CCg-Wb-yId" id="sNp-MW-Ynh"/>
                                 </connections>
@@ -106,7 +103,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y69-5K-HgZ">
                                 <rect key="frame" x="12" y="148" width="576" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="CCg-Wb-yId" id="czN-op-xOa"/>
                                 </connections>
@@ -114,7 +111,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qjD-UX-x9b">
                                 <rect key="frame" x="12" y="186" width="576" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="CCg-Wb-yId" id="WDG-vh-x0n"/>
                                 </connections>
@@ -136,33 +133,35 @@
                             <constraint firstItem="I21-ff-83n" firstAttribute="leading" secondItem="QUB-om-EOs" secondAttribute="leadingMargin" constant="-8" id="xNp-wi-RJW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit Contact" id="DwD-Ht-Csf">
+                    <navigationItem key="navigationItem" title="New Contact" id="DwD-Ht-Csf">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Sq2-pD-3dO">
                             <connections>
-                                <segue destination="wrL-og-ljg" kind="unwind" identifier="idUnwindSegueEditContact" unwindAction="unwindToContactsListViewController:" id="kFP-Cr-RSF"/>
+                                <action selector="cancelAddingNewContact:" destination="CCg-Wb-yId" id="wVQ-mB-82C"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="ir5-zo-7xs">
                             <connections>
                                 <action selector="saveContact:" destination="CCg-Wb-yId" id="otV-Gf-r64"/>
+                                <segue destination="i0a-LR-yoC" kind="unwind" identifier="idSegueDidAddNewContact" unwindAction="didAddNewContact:" id="LW4-Zg-kbO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="txtEmail" destination="qjD-UX-x9b" id="G70-el-9EM"/>
-                        <outlet property="txtFirstName" destination="I21-ff-83n" id="5wh-ra-fT6"/>
-                        <outlet property="txtLastName" destination="Zxp-sh-2Pt" id="hVS-Ov-6wh"/>
-                        <outlet property="txtPhoneNumber" destination="Y69-5K-HgZ" id="0kk-77-zFM"/>
+                        <outlet property="emailField" destination="qjD-UX-x9b" id="UCu-xR-Uil"/>
+                        <outlet property="firstNameField" destination="I21-ff-83n" id="oqL-0B-sGB"/>
+                        <outlet property="lastNameField" destination="Zxp-sh-2Pt" id="8G6-tf-MDi"/>
+                        <outlet property="phoneNumberField" destination="Y69-5K-HgZ" id="nis-p7-cd5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvJ-FR-H5f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="i0a-LR-yoC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2019" y="417"/>
+            <point key="canvasLocation" x="2831" y="417"/>
         </scene>
         <!--Contact Info-->
         <scene sceneID="fm5-Ca-fE0">
             <objects>
-                <viewController id="j0z-ne-Fp6" customClass="ViewContactViewController" customModule="HandOffDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="j0z-ne-Fp6" customClass="DetailViewController" customModule="HandOffDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7bz-ya-2Rz"/>
                         <viewControllerLayoutGuide type="bottom" id="XOw-HZ-wSx"/>
@@ -200,6 +199,9 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="j0z-ne-Fp6" id="eUV-lg-LDg"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -210,16 +212,9 @@
                             <constraint firstItem="XOw-HZ-wSx" firstAttribute="top" secondItem="Kpz-hu-xxl" secondAttribute="bottom" id="oKc-mz-stO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Contact Info" id="HBn-Pr-bse">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="MYt-eX-baL">
-                            <connections>
-                                <action selector="dismissViewController:" destination="j0z-ne-Fp6" id="bak-Ma-p82"/>
-                                <segue destination="wrL-og-ljg" kind="unwind" identifier="idUnwindSegueViewContact" unwindAction="unwindToContactsListViewController:" id="Jm7-i1-4TV"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Contact Info" id="HBn-Pr-bse"/>
                     <connections>
-                        <outlet property="tblContactInfo" destination="Kpz-hu-xxl" id="ODl-pN-ywp"/>
+                        <outlet property="tableView" destination="Kpz-hu-xxl" id="kdC-7U-sKI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ocP-BI-jwv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -243,6 +238,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hIn-rC-D6w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="449" y="417"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GZV-wY-zI5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kzu-9P-blv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aHb-8E-3UM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CCg-Wb-yId" kind="relationship" relationship="rootViewController" id="sf2-RB-tLp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uet-7q-xpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2019" y="417"/>
         </scene>
     </scenes>
 </document>
