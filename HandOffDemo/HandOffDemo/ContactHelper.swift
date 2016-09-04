@@ -54,4 +54,9 @@ class ContactHelper {
     
     CoreDataStack.sharedInstance.saveContext()
   }
+  
+  func clearAllContact() {
+    let fetchRequest = NSFetchRequest(entityName: "Contact")
+    try! context.executeFetchRequest(fetchRequest).forEach { context.deleteObject($0 as! NSManagedObject) }
+  }
 }
