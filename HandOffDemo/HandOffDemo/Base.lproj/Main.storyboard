@@ -242,7 +242,7 @@
         <!--Navigation Controller-->
         <scene sceneID="GZV-wY-zI5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kzu-9P-blv" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="newContactNavi" automaticallyAdjustsScrollViewInsets="NO" id="kzu-9P-blv" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aHb-8E-3UM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
