@@ -22,10 +22,7 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     
     tableView.rowHeight = 60
     tableView.estimatedRowHeight = 60
-    
-    
-    
-    // Do any additional setup after loading the view.
+
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -36,9 +33,18 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     }
   }
   
-  // MARK: - Interface Builder Actions
+  // MARK: - NSUserActivity
   
-  
+//  override func restoreUserActivityState(activity: NSUserActivity) {
+//    
+//    userActivity = activity
+//    
+//    if activity.activityType == "cn.wangshijie.HandOffDemo.newContact" {
+//      self.performSegueWithIdentifier("idSeguePersentAddContact", sender: self)
+//    }
+//    
+//    super.restoreUserActivityState(activity)
+//  }
   
   // MARK: - table view data source
   
@@ -65,10 +71,11 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
   // MARK: - Navigation
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    guard segue.identifier == "idSegueShowDetail" else { return }
-    if let destination = segue.destinationViewController as? DetailViewController {
-      let row = tableView.indexPathForCell(sender as! UITableViewCell)!.row
-      destination.contact = allContacts[row]
+    if segue.identifier == "idSegueShowDetail" {
+      if let destination = segue.destinationViewController as? DetailViewController {
+        let row = tableView.indexPathForCell(sender as! UITableViewCell)!.row
+        destination.contact = allContacts[row]
+      }
     }
   }
   
