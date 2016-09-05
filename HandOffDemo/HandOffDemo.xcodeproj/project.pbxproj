@@ -8,20 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		CC5D14341D7B073700ABCE79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5D14331D7B073700ABCE79 /* AppDelegate.swift */; };
-		CC5D14361D7B073700ABCE79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5D14351D7B073700ABCE79 /* ViewController.swift */; };
 		CC5D14391D7B073700ABCE79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5D14371D7B073700ABCE79 /* Main.storyboard */; };
 		CC5D143B1D7B073700ABCE79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC5D143A1D7B073700ABCE79 /* Assets.xcassets */; };
 		CC5D143E1D7B073700ABCE79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5D143C1D7B073700ABCE79 /* LaunchScreen.storyboard */; };
+		CC5D14471D7B080F00ABCE79 /* HandOffModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC5D14451D7B080F00ABCE79 /* HandOffModel.xcdatamodeld */; };
+		CC5D14491D7B084E00ABCE79 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5D14481D7B084E00ABCE79 /* CoreDataStack.swift */; };
+		CC5D144C1D7B0B3200ABCE79 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5D144A1D7B0B3200ABCE79 /* Contact+CoreDataProperties.swift */; };
+		CC5D144D1D7B0B3200ABCE79 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5D144B1D7B0B3200ABCE79 /* Contact.swift */; };
+		CC5D14511D7B0B8000ABCE79 /* ContactHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5D14501D7B0B8000ABCE79 /* ContactHelper.swift */; };
+		CC5D14531D7B1F8700ABCE79 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5D14521D7B1F8700ABCE79 /* ContactsViewController.swift */; };
+		CC5D14551D7C007D00ABCE79 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5D14541D7C007D00ABCE79 /* NewContactViewController.swift */; };
+		CC5D14571D7C3B9C00ABCE79 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5D14561D7C3B9C00ABCE79 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CC5D14301D7B073700ABCE79 /* HandOffDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandOffDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5D14331D7B073700ABCE79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CC5D14351D7B073700ABCE79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CC5D14381D7B073700ABCE79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC5D143A1D7B073700ABCE79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC5D143D1D7B073700ABCE79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC5D143F1D7B073700ABCE79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC5D14461D7B080F00ABCE79 /* HandOffModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HandOffModel.xcdatamodel; sourceTree = "<group>"; };
+		CC5D14481D7B084E00ABCE79 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		CC5D144A1D7B0B3200ABCE79 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CC5D144B1D7B0B3200ABCE79 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		CC5D14501D7B0B8000ABCE79 /* ContactHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactHelper.swift; sourceTree = "<group>"; };
+		CC5D14521D7B1F8700ABCE79 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		CC5D14541D7C007D00ABCE79 /* NewContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
+		CC5D14561D7C3B9C00ABCE79 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +68,37 @@
 		CC5D14321D7B073700ABCE79 /* HandOffDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CC5D144F1D7B0B6E00ABCE79 /* Model */,
 				CC5D14331D7B073700ABCE79 /* AppDelegate.swift */,
-				CC5D14351D7B073700ABCE79 /* ViewController.swift */,
+				CC5D14521D7B1F8700ABCE79 /* ContactsViewController.swift */,
+				CC5D14541D7C007D00ABCE79 /* NewContactViewController.swift */,
+				CC5D14561D7C3B9C00ABCE79 /* DetailViewController.swift */,
+				CC5D144E1D7B0B6500ABCE79 /* CoreData */,
 				CC5D14371D7B073700ABCE79 /* Main.storyboard */,
 				CC5D143A1D7B073700ABCE79 /* Assets.xcassets */,
 				CC5D143C1D7B073700ABCE79 /* LaunchScreen.storyboard */,
 				CC5D143F1D7B073700ABCE79 /* Info.plist */,
 			);
 			path = HandOffDemo;
+			sourceTree = "<group>";
+		};
+		CC5D144E1D7B0B6500ABCE79 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				CC5D14451D7B080F00ABCE79 /* HandOffModel.xcdatamodeld */,
+				CC5D14481D7B084E00ABCE79 /* CoreDataStack.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		CC5D144F1D7B0B6E00ABCE79 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CC5D144A1D7B0B3200ABCE79 /* Contact+CoreDataProperties.swift */,
+				CC5D144B1D7B0B3200ABCE79 /* Contact.swift */,
+				CC5D14501D7B0B8000ABCE79 /* ContactHelper.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +133,7 @@
 				TargetAttributes = {
 					CC5D142F1D7B073700ABCE79 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = J84HL5BDK2;
 					};
 				};
 			};
@@ -135,8 +173,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC5D14361D7B073700ABCE79 /* ViewController.swift in Sources */,
+				CC5D14571D7C3B9C00ABCE79 /* DetailViewController.swift in Sources */,
+				CC5D144D1D7B0B3200ABCE79 /* Contact.swift in Sources */,
+				CC5D14531D7B1F8700ABCE79 /* ContactsViewController.swift in Sources */,
+				CC5D14471D7B080F00ABCE79 /* HandOffModel.xcdatamodeld in Sources */,
+				CC5D14511D7B0B8000ABCE79 /* ContactHelper.swift in Sources */,
 				CC5D14341D7B073700ABCE79 /* AppDelegate.swift in Sources */,
+				CC5D144C1D7B0B3200ABCE79 /* Contact+CoreDataProperties.swift in Sources */,
+				CC5D14551D7C007D00ABCE79 /* NewContactViewController.swift in Sources */,
+				CC5D14491D7B084E00ABCE79 /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,10 +296,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HandOffDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.neu.wangshijie.HandOffDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -262,10 +310,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HandOffDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.neu.wangshijie.HandOffDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -288,8 +339,22 @@
 				CC5D14441D7B073700ABCE79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CC5D14451D7B080F00ABCE79 /* HandOffModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CC5D14461D7B080F00ABCE79 /* HandOffModel.xcdatamodel */,
+			);
+			currentVersion = CC5D14461D7B080F00ABCE79 /* HandOffModel.xcdatamodel */;
+			path = HandOffModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CC5D14281D7B073700ABCE79 /* Project object */;
 }

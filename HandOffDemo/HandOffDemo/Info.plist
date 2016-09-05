@@ -4,7 +4,7 @@
 <dict>
 	<key>NSUserActivityTypes</key>
 	<array>
-		<string>cn.wangshijie.HandOffDemo.editContact</string>
+		<string>cn.wangshijie.HandOffDemo.newContact</string>
 		<string>cn.wangshijie.HandOffDemo.viewContact</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
