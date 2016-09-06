@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hzc-Dg-qRP">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -18,27 +18,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AjE-2B-cPC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vr1-Rp-HBC">
+                                <rect key="frame" x="254.5" y="323" width="91" height="30"/>
+                                <state key="normal" title="Copy to Mac!"/>
+                                <connections>
+                                    <action selector="goAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tM5-V7-eQx"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Wj4-YE-dc0">
+                                <rect key="frame" x="290" y="328" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your text here..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AjE-2B-cPC">
                                 <rect key="frame" x="20" y="285" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vr1-Rp-HBC">
-                                <rect key="frame" x="285" y="323" width="30" height="30"/>
-                                <state key="normal" title="Go"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="AjE-2B-cPC" secondAttribute="leading" id="YRu-2i-I0e"/>
+                            <constraint firstItem="Wj4-YE-dc0" firstAttribute="centerX" secondItem="AjE-2B-cPC" secondAttribute="centerX" id="ZMt-lC-Y5d"/>
                             <constraint firstItem="AjE-2B-cPC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gZl-Mq-70Z"/>
+                            <constraint firstItem="Wj4-YE-dc0" firstAttribute="top" secondItem="AjE-2B-cPC" secondAttribute="bottom" constant="13" id="kLl-Pp-LcJ"/>
                             <constraint firstItem="vr1-Rp-HBC" firstAttribute="top" secondItem="AjE-2B-cPC" secondAttribute="bottom" constant="8" id="lke-Bh-YeI"/>
                             <constraint firstItem="vr1-Rp-HBC" firstAttribute="centerX" secondItem="AjE-2B-cPC" secondAttribute="centerX" id="nTw-8f-eDq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AjE-2B-cPC" secondAttribute="trailing" id="ySo-q4-mLM"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="TEM-Ot-RW6"/>
+                    <connections>
+                        <outlet property="addressField" destination="AjE-2B-cPC" id="oiX-qI-HEC"/>
+                        <outlet property="indicatorView" destination="Wj4-YE-dc0" id="fX8-zZ-5p4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1090" y="339"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fc8-vI-ZD9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hzc-Dg-qRP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wor-L4-x4x">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="VeX-no-aDq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XE6-Pe-T3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="278" y="339"/>
         </scene>
