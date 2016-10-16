@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  HypnosisterView.h
 //  Hypnosister
 //
 //  Created by 王仕杰 on 16/10/2016.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface HypnosisterView : UIView
 
 @end
-

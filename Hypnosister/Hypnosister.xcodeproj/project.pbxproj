@@ -9,10 +9,9 @@
 /* Begin PBXBuildFile section */
 		CC9D6F671DB3C3DC00D82B69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9D6F661DB3C3DC00D82B69 /* main.m */; };
 		CC9D6F6A1DB3C3DC00D82B69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9D6F691DB3C3DC00D82B69 /* AppDelegate.m */; };
-		CC9D6F6D1DB3C3DC00D82B69 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9D6F6C1DB3C3DC00D82B69 /* ViewController.m */; };
-		CC9D6F701DB3C3DC00D82B69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9D6F6E1DB3C3DC00D82B69 /* Main.storyboard */; };
 		CC9D6F721DB3C3DC00D82B69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC9D6F711DB3C3DC00D82B69 /* Assets.xcassets */; };
 		CC9D6F751DB3C3DC00D82B69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9D6F731DB3C3DC00D82B69 /* LaunchScreen.storyboard */; };
+		CC9D6F7E1DB3C4E400D82B69 /* HypnosisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9D6F7D1DB3C4E400D82B69 /* HypnosisterView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +19,11 @@
 		CC9D6F661DB3C3DC00D82B69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC9D6F681DB3C3DC00D82B69 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CC9D6F691DB3C3DC00D82B69 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CC9D6F6B1DB3C3DC00D82B69 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CC9D6F6C1DB3C3DC00D82B69 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		CC9D6F6F1DB3C3DC00D82B69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC9D6F711DB3C3DC00D82B69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC9D6F741DB3C3DC00D82B69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC9D6F761DB3C3DC00D82B69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC9D6F7C1DB3C4E400D82B69 /* HypnosisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HypnosisterView.h; sourceTree = SOURCE_ROOT; };
+		CC9D6F7D1DB3C4E400D82B69 /* HypnosisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HypnosisterView.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +58,8 @@
 			children = (
 				CC9D6F681DB3C3DC00D82B69 /* AppDelegate.h */,
 				CC9D6F691DB3C3DC00D82B69 /* AppDelegate.m */,
-				CC9D6F6B1DB3C3DC00D82B69 /* ViewController.h */,
-				CC9D6F6C1DB3C3DC00D82B69 /* ViewController.m */,
-				CC9D6F6E1DB3C3DC00D82B69 /* Main.storyboard */,
+				CC9D6F7C1DB3C4E400D82B69 /* HypnosisterView.h */,
+				CC9D6F7D1DB3C4E400D82B69 /* HypnosisterView.m */,
 				CC9D6F711DB3C3DC00D82B69 /* Assets.xcassets */,
 				CC9D6F731DB3C3DC00D82B69 /* LaunchScreen.storyboard */,
 				CC9D6F761DB3C3DC00D82B69 /* Info.plist */,
@@ -139,7 +136,6 @@
 			files = (
 				CC9D6F751DB3C3DC00D82B69 /* LaunchScreen.storyboard in Resources */,
 				CC9D6F721DB3C3DC00D82B69 /* Assets.xcassets in Resources */,
-				CC9D6F701DB3C3DC00D82B69 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,8 +146,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC9D6F6D1DB3C3DC00D82B69 /* ViewController.m in Sources */,
 				CC9D6F6A1DB3C3DC00D82B69 /* AppDelegate.m in Sources */,
+				CC9D6F7E1DB3C4E400D82B69 /* HypnosisterView.m in Sources */,
 				CC9D6F671DB3C3DC00D82B69 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,14 +155,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CC9D6F6E1DB3C3DC00D82B69 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CC9D6F6F1DB3C3DC00D82B69 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CC9D6F731DB3C3DC00D82B69 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
