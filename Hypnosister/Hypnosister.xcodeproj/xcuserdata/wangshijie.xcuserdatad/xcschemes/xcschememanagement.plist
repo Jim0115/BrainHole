@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AddressBookDemo.xcscheme</key>
+		<key>Hypnosister.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>CC45F3881D8525840051D226</key>
+		<key>CC9D6F611DB3C3DB00D82B69</key>
 		<dict>
 			<key>primary</key>
 			<true/>
