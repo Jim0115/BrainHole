@@ -22,22 +22,40 @@
 //  CGFloat radius = MIN(self.bounds.size.width, self.bounds.size.height) / 2;
   CGFloat maxRadius = hypotf(self.bounds.size.width, self.bounds.size.height) / 2;
   
-  UIBezierPath* path = [UIBezierPath new];
+  CGContextRef currentContext = UIGraphicsGetCurrentContext();
+  
+  CGContextSetRGBStrokeColor(currentContext, 1, 1, 1, 1);
+  
+  CGMutablePathRef path = CGPathCreateMutable();
   
   for (CGFloat currentRadius = maxRadius; currentRadius > 0; currentRadius -= 20) {
-    [path addArcWithCenter:self.center
-                    radius:currentRadius
-                startAngle:0
-                  endAngle:M_PI * 2
-                 clockwise:YES];
-    [path moveToPoint:CGPointMake(self.bounds.size.width / 2 + currentRadius - 20, self.center.y)];
+    CGPathMoveToPoint(path, NULL, self.center.x + currentRadius, self.center.y);
+    CGPathAddArc(path, NULL, self.center.x, self.center.y, currentRadius, 0, M_PI * 2, true);
   }
   
-  path.lineWidth = 10;
+  CGContextAddPath(currentContext, path);
+  CGContextStrokePath(currentContext);
+  CGPathRelease(path);
   
-  [[UIColor lightGrayColor] setStroke];
+  CGContextSetStrokeColorWithColor(currentContext, [[UIColor redColor] CGColor]);
   
-  [path stroke];
+//  UIBezierPath* path = [UIBezierPath new];
+//
+//  for (CGFloat currentRadius = maxRadius; currentRadius > 0; currentRadius -= 20) {
+//    [path moveToPoint:CGPointMake(self.center.x + currentRadius, self.center.y)];
+//    
+//    [path addArcWithCenter:self.center
+//                    radius:currentRadius
+//                startAngle:0
+//                  endAngle:M_PI * 2
+//                 clockwise:YES];
+//  }
+//  
+//  path.lineWidth = 10;
+//  
+//  [[UIColor lightGrayColor] setStroke];
+//
+//  [path stroke];
 }
 
 
