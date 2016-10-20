@@ -20,7 +20,7 @@
 
 - (void)drawRect:(CGRect)rect {
   
-    CGFloat maxRadius = hypotf(self.bounds.size.width, self.bounds.size.height) / 2;
+//    CGFloat maxRadius = hypotf(self.bounds.size.width, self.bounds.size.height) / 2;
   
   
   CGContextRef contextRef = UIGraphicsGetCurrentContext();
@@ -28,23 +28,25 @@
   CGFloat components[] = {1, 0, 0, 1};
   CGColorRef color = CGColorCreate(CGColorSpaceCreateDeviceRGB(), components);
   CGContextSetStrokeColorWithColor(contextRef, color);
+  CGColorRelease(color);
+  CGContextSetFillColorWithColor(contextRef, [[UIColor blueColor] CGColor]);
   
 //  CGContextMoveToPoint(contextRef, 100, 100);
 //  CGContextAddLineToPoint(contextRef, 200, 200);
   
   CGMutablePathRef path = CGPathCreateMutable();
   
-  
-  for (CGFloat currentRadius = maxRadius; currentRadius > 0; currentRadius -= 20) {
-    CGPathMoveToPoint(path, NULL, self.center.x + currentRadius, self.center.y);
-    CGPathAddArc(path, NULL, self.center.x, self.center.y, currentRadius, 0, M_PI * 2, false);
-  }
+  CGPathAddArc(path, NULL, self.center.x, self.center.y, 30, 0, M_PI * 2, false);
+//  for (CGFloat currentRadius = maxRadius; currentRadius > 0; currentRadius -= 20) {
+//    CGPathMoveToPoint(path, NULL, self.center.x + currentRadius, self.center.y);
+//    CGPathAddArc(path, NULL, self.center.x, self.center.y, currentRadius, 0, M_PI * 2, false);
+//  }
   
   CGContextAddPath(contextRef, path);
   
   CGContextSetLineWidth(contextRef, 5);
   
-  CGContextStrokePath(contextRef);
+  CGContextDrawPath(contextRef, kCGPathFillStroke);
   
   CGPathRelease(path);
   
