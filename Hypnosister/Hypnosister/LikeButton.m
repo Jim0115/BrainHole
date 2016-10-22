@@ -25,17 +25,15 @@
   CGFloat locations[] = {0, 1};
   CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpaceRef, components, locations, 2);
   CGColorSpaceRelease(colorSpaceRef);
+  CGContextDrawLinearGradient(contextRef, gradient, CGPointMake(0, 0), CGPointMake(rect.size.width, rect.size.height), 0);
   
   CGContextAddArc(contextRef, rect.size.width / 2, rect.size.height / 2, rect.size.width / 3, 0, M_PI * 2, false);
   
   CGContextSetStrokeColorWithColor(contextRef, [[UIColor redColor] CGColor]);
-  CGContextSetFillColorWithColor(contextRef, [[UIColor blueColor] CGColor]);
+//  CGContextSetFillColorWithColor(contextRef, [[UIColor blueColor] CGColor]);
   
-  CGContextSaveGState(contextRef);
   
-  CGContextSetShadow(contextRef, CGSizeMake(10, 10), 8);
-  
-  CGContextRestoreGState(contextRef);
+//  CGContextSetShadow(contextRef, CGSizeMake(10, 10), 8);
   
   CGContextDrawPath(contextRef, kCGPathFillStroke);
 }

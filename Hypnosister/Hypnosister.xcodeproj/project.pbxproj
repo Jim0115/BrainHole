@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC949DC31DB9142B00F2AAFC /* LikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CC949DC21DB9142B00F2AAFC /* LikeButton.m */; };
 		CC9D6F671DB3C3DC00D82B69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9D6F661DB3C3DC00D82B69 /* main.m */; };
 		CC9D6F6A1DB3C3DC00D82B69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9D6F691DB3C3DC00D82B69 /* AppDelegate.m */; };
 		CC9D6F721DB3C3DC00D82B69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC9D6F711DB3C3DC00D82B69 /* Assets.xcassets */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC949DC11DB9142B00F2AAFC /* LikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikeButton.h; sourceTree = "<group>"; };
+		CC949DC21DB9142B00F2AAFC /* LikeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikeButton.m; sourceTree = "<group>"; };
 		CC9D6F621DB3C3DC00D82B69 /* Hypnosister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hypnosister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9D6F661DB3C3DC00D82B69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC9D6F681DB3C3DC00D82B69 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,6 +61,8 @@
 			children = (
 				CC9D6F681DB3C3DC00D82B69 /* AppDelegate.h */,
 				CC9D6F691DB3C3DC00D82B69 /* AppDelegate.m */,
+				CC949DC11DB9142B00F2AAFC /* LikeButton.h */,
+				CC949DC21DB9142B00F2AAFC /* LikeButton.m */,
 				CC9D6F7C1DB3C4E400D82B69 /* HypnosisterView.h */,
 				CC9D6F7D1DB3C4E400D82B69 /* HypnosisterView.m */,
 				CC9D6F711DB3C3DC00D82B69 /* Assets.xcassets */,
@@ -146,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC949DC31DB9142B00F2AAFC /* LikeButton.m in Sources */,
 				CC9D6F6A1DB3C3DC00D82B69 /* AppDelegate.m in Sources */,
 				CC9D6F7E1DB3C4E400D82B69 /* HypnosisterView.m in Sources */,
 				CC9D6F671DB3C3DC00D82B69 /* main.m in Sources */,
@@ -297,6 +303,7 @@
 				CC9D6F7B1DB3C3DC00D82B69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
