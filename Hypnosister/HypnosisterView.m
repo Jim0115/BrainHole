@@ -14,59 +14,46 @@
   if (self = [super initWithFrame:frame]) {
     self.backgroundColor = [UIColor clearColor];
     self.clipsToBounds = YES;
+    self.circleColor = [UIColor lightGrayColor];
   }
   return self;
 }
 
 - (void)drawRect:(CGRect)rect {
   
-//    CGFloat maxRadius = hypotf(self.bounds.size.width, self.bounds.size.height) / 2;
+  CGFloat maxRadius = hypotf(self.bounds.size.width, self.bounds.size.height) / 2;
   
+  UIBezierPath* path = [UIBezierPath new];
   
-  CGContextRef contextRef = UIGraphicsGetCurrentContext();
+  for (CGFloat currentRadius = maxRadius; currentRadius > 0; currentRadius -= 20) {
+    [path moveToPoint:CGPointMake(self.center.x + currentRadius, self.center.y)];
+    
+    [path addArcWithCenter:self.center
+                    radius:currentRadius
+                startAngle:0
+                  endAngle:M_PI * 2
+                 clockwise:YES];
+  }
   
-  CGFloat components[] = {1, 0, 0, 1};
-  CGColorRef color = CGColorCreate(CGColorSpaceCreateDeviceRGB(), components);
-  CGContextSetStrokeColorWithColor(contextRef, color);
-  CGColorRelease(color);
-  CGContextSetFillColorWithColor(contextRef, [[UIColor blueColor] CGColor]);
+  path.lineWidth = 10;
   
-//  CGContextMoveToPoint(contextRef, 100, 100);
-//  CGContextAddLineToPoint(contextRef, 200, 200);
+  [_circleColor setStroke];
   
-  CGMutablePathRef path = CGPathCreateMutable();
+  [path stroke];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+  [super touchesBegan:touches withEvent:event];
   
-  CGPathAddArc(path, NULL, self.center.x, self.center.y, 30, 0, M_PI * 2, false);
-//  for (CGFloat currentRadius = maxRadius; currentRadius > 0; currentRadius -= 20) {
-//    CGPathMoveToPoint(path, NULL, self.center.x + currentRadius, self.center.y);
-//    CGPathAddArc(path, NULL, self.center.x, self.center.y, currentRadius, 0, M_PI * 2, false);
-//  }
+  CGFloat red = arc4random_uniform(101) / 100.0;
+  CGFloat blue = arc4random_uniform(101) / 100.0;
+  CGFloat green = arc4random_uniform(101) / 100.0;
   
-  CGContextAddPath(contextRef, path);
-  
-  CGContextSetLineWidth(contextRef, 5);
-  
-  CGContextDrawPath(contextRef, kCGPathFillStroke);
-  
-  CGPathRelease(path);
-  
-  //  UIBezierPath* path = [UIBezierPath new];
-  //
-  //  for (CGFloat currentRadius = maxRadius; currentRadius > 0; currentRadius -= 20) {
-  //    [path moveToPoint:CGPointMake(self.center.x + currentRadius, self.center.y)];
-  //
-  //    [path addArcWithCenter:self.center
-  //                    radius:currentRadius
-  //                startAngle:0
-  //                  endAngle:M_PI * 2
-  //                 clockwise:YES];
-  //  }
-  //
-  //  path.lineWidth = 10;
-  //
-  //  [[UIColor lightGrayColor] setStroke];
-  //
-  //  [path stroke];
+  _circleColor = [UIColor colorWithRed:red
+                                 green:green
+                                  blue:blue
+                                 alpha:1];
+  [self setNeedsDisplay];
 }
 
 

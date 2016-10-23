@@ -24,10 +24,10 @@
   UIView* rootView = _window.rootViewController.view;
   rootView.backgroundColor = [UIColor whiteColor];
   
-  [rootView addSubview:[[LikeButton alloc] initWithFrame:CGRectMake(50, 50, 200, 200)]];
+//  [rootView addSubview:[[LikeButton alloc] initWithFrame:CGRectMake(50, 50, 200, 200)]];
   
-//  HypnosisterView* firstView = [[HypnosisterView alloc] initWithFrame:rootView.bounds];
-//  [rootView addSubview:firstView];
+  HypnosisterView* firstView = [[HypnosisterView alloc] initWithFrame:rootView.bounds];
+  [rootView addSubview:firstView];
   
   [_window makeKeyAndVisible];
   return YES;
