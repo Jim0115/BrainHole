@@ -26,8 +26,26 @@
   
 //  [rootView addSubview:[[LikeButton alloc] initWithFrame:CGRectMake(50, 50, 200, 200)]];
   
-  HypnosisterView* firstView = [[HypnosisterView alloc] initWithFrame:rootView.bounds];
-  [rootView addSubview:firstView];
+  UIScrollView* scrollView = [[UIScrollView alloc] initWithFrame:rootView.bounds];
+  [rootView addSubview:scrollView];
+  
+//  CGRect bigRect = rootView.bounds;
+//  bigRect.size.width *= 2;
+//  bigRect.size.height *= 2;
+  
+  CGRect hypnoRect = rootView.bounds;
+  HypnosisterView* hypnosisterView = [[HypnosisterView alloc] initWithFrame:hypnoRect];
+  [scrollView addSubview:hypnosisterView];
+  
+  hypnoRect.origin.x += hypnoRect.size.width;
+  HypnosisterView* hypnosisterView2 = [[HypnosisterView alloc] initWithFrame:hypnoRect];
+//  hypnosisterView2.frame = hypnoRect;
+  [scrollView addSubview:hypnosisterView2];
+  
+  hypnoRect.size.width *= 2;
+  scrollView.contentSize = hypnoRect.size;
+  scrollView.bounces = NO;
+  scrollView.pagingEnabled = YES;
   
   [_window makeKeyAndVisible];
   return YES;
