@@ -42,7 +42,7 @@
 //  hypnosisterView2.frame = hypnoRect;
   [scrollView addSubview:hypnosisterView2];
   
-  hypnoRect.size.width *= 2;
+  hypnoRect.size.width *= 2.5;
   scrollView.contentSize = hypnoRect.size;
   scrollView.bounces = NO;
   scrollView.pagingEnabled = YES;
