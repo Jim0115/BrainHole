@@ -8,6 +8,8 @@
 
 #import "BNRReminderViewController.h"
 
+@import UserNotifications;
+
 @interface BNRReminderViewController ()
 
 @property (nonatomic, weak) IBOutlet UIDatePicker *datePicker;
@@ -28,7 +30,7 @@
 }
 
 - (IBAction)addReminder:(UIButton *)sender {
-  
+  NSDate* date = self.datePicker.date;
 }
 
 @end

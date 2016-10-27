@@ -11,6 +11,8 @@
 #import "BNRHypnosisViewController.h"
 #import "BNRReminderViewController.h"
 
+@import UserNotifications;
+
 @interface AppDelegate ()
 
 @end
@@ -29,6 +31,12 @@
   
   _window.rootViewController = tabBarController;
   [_window makeKeyAndVisible];
+  
+  UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
+  [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound)
+                        completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                          
+                        }];
   
   return YES;
 }

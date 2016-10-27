@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BNRReminderViewController">
             <connections>
+                <outlet property="datePicker" destination="RhT-Q4-K8M" id="ghM-rT-TLA"/>
                 <outlet property="view" destination="wK8-NG-a5c" id="GhJ-do-Esx"/>
             </connections>
         </placeholder>
@@ -27,6 +28,9 @@
                     <frame key="frameInset" minX="146" minY="244" width="82" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Remind Me!"/>
+                    <connections>
+                        <action selector="addReminder:" destination="-1" eventType="touchUpInside" id="YAy-Bs-rn8"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
