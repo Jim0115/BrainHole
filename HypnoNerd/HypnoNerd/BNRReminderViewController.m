@@ -29,6 +29,13 @@
   [super viewDidLoad];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  
+  _datePicker.minimumDate = [NSDate dateWithTimeIntervalSinceNow:60];
+  _datePicker.maximumDate = [NSDate dateWithTimeIntervalSinceNow:60 * 60 * 24 * 7];
+}
+
 - (IBAction)addReminder:(UIButton *)sender {
   NSDate* date = self.datePicker.date;
   
@@ -38,8 +45,8 @@
   UNNotificationTrigger* trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:[date timeIntervalSinceNow] repeats:NO];
   
   UNNotificationRequest* request = [UNNotificationRequest requestWithIdentifier:[NSUUID UUID].UUIDString
-                                       content:content
-                                       trigger:trigger];
+                                                                        content:content
+                                                                        trigger:trigger];
   
   [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:request
                                                          withCompletionHandler:nil];
