@@ -31,6 +31,18 @@
 
 - (IBAction)addReminder:(UIButton *)sender {
   NSDate* date = self.datePicker.date;
+  
+  UNMutableNotificationContent* content = [UNMutableNotificationContent new];
+  content.body = @"Hypnotize Me!";
+  
+  UNNotificationTrigger* trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:[date timeIntervalSinceNow] repeats:NO];
+  
+  UNNotificationRequest* request = [UNNotificationRequest requestWithIdentifier:[NSUUID UUID].UUIDString
+                                       content:content
+                                       trigger:trigger];
+  
+  [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:request
+                                                         withCompletionHandler:nil];
 }
 
 @end
