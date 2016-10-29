@@ -28,6 +28,16 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  UIInterpolatingMotionEffect* motionEffect;
+  
+  for (int i = 0; i < 2; i++) {
+    motionEffect = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:(i ? @"center.x" : @"center.y")
+                                                    type:(i ? UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis : UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis)];
+    motionEffect.maximumRelativeValue = @25;
+    motionEffect.minimumRelativeValue = @-25;
+    [self.view addMotionEffect:motionEffect];
+  }
 }
 
 @end
