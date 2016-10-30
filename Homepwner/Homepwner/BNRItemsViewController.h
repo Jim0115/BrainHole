@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  BNRItemsViewController.h
 //  Homepwner
 //
 //  Created by 王仕杰 on 2016/10/30.
 //  Copyright © 2016年 王仕杰. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-@interface ViewController : UIViewController
-
+@interface BNRItemsViewController : UITableViewController
 
 @end
-
