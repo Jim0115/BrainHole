@@ -58,4 +58,8 @@
   
 }
 
+- (NSString *)description {
+  return [NSString stringWithFormat:@"%@ (%@): Worth $%ld, recorded on %@", _name, _serialNumber, _valueInDollars, _dateCreated];
+}
+
 @end
