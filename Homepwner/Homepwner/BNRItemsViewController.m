@@ -26,9 +26,9 @@
 
 - (instancetype)initWithStyle:(UITableViewStyle)style {
   if (self = [super initWithStyle:UITableViewStylePlain]) {
-    for (int i = 0; i < 5; i++) {
-      [[BNRItemStore sharedStore] createItem];
-    }
+//    for (int i = 0; i < 5; i++) {
+//      [[BNRItemStore sharedStore] createItem];
+//    }
   }
   return self;
 }
@@ -68,7 +68,16 @@
 }
 
 - (IBAction)addNewItem:(UIButton *)sender {
+//  NSInteger lastRow = [self.tableView numberOfRowsInSection:0];
   
+  BNRItem* newItem = [[BNRItemStore sharedStore] createItem];
+  NSInteger lastRow = [[[BNRItemStore sharedStore] allItems] indexOfObject:newItem];
+  
+  NSIndexPath* indexPath = [NSIndexPath indexPathForRow:lastRow
+                                              inSection:0];
+  
+  [self.tableView insertRowsAtIndexPaths:@[indexPath]
+                        withRowAnimation:UITableViewRowAnimationMiddle];
 }
 
 
@@ -90,6 +99,27 @@
   cell.textLabel.text = item.description;
   
   return cell;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (editingStyle == UITableViewCellEditingStyleDelete) {
+    BNRItem* itemToRemove = [[BNRItemStore sharedStore] allItems][indexPath.row];
+    [[BNRItemStore sharedStore] removeItem:itemToRemove];
+    
+    [tableView deleteRowsAtIndexPaths:@[indexPath]
+                     withRowAnimation:UITableViewRowAnimationFade];
+  }
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+  [[BNRItemStore sharedStore] moveItemAtIndex:sourceIndexPath.row
+                                      toIndex:destinationIndexPath.row];
+}
+
+#pragma mark - tableViewDelegate
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+  return @"Remove";
 }
 
 @end
