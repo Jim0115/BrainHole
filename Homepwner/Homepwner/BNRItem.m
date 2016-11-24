@@ -10,10 +10,6 @@
 
 @interface BNRItem ()
 
-@property (nonatomic, copy, readwrite) NSString* name;
-@property (nonatomic, assign, readwrite) NSInteger valueInDollars;
-@property (nonatomic, copy, readwrite) NSString* serialNumber;
-
 @property (nonatomic, strong, readwrite) NSDate* dateCreated;
 
 @end

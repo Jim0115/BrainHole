@@ -11,6 +11,8 @@
 #import "BNRItemStore.h"
 #import "BNRItem.h"
 
+#import "BNRDetailViewController.h"
+
 @interface BNRItemsViewController ()
 
 @property (nonatomic, strong) IBOutlet UIView* headerView;
@@ -21,6 +23,8 @@
 
 - (instancetype)init {
   self = [self initWithStyle:UITableViewStylePlain];
+  self.title = @"Homepwner";
+  
   return self;
 }
 
@@ -49,6 +53,12 @@
          forCellReuseIdentifier:@"UITableViewCell"];
   
   self.tableView.tableHeaderView = self.headerView;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  
+  [self.tableView reloadData];
 }
 
 #pragma mark - Actions
@@ -120,6 +130,14 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
   return @"Remove";
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  BNRDetailViewController* detailViewController = [BNRDetailViewController new];
+  
+  detailViewController.item = [[BNRItemStore sharedStore] allItems][indexPath.row];
+  
+  [self showViewController:detailViewController sender:self];
 }
 
 @end
