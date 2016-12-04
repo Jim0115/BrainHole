@@ -10,13 +10,17 @@
 
 #import "BNRItem.h"
 
-@interface BNRDetailViewController ()
+@interface BNRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *serialNumberField;
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
 
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
+
 
 @end
 
@@ -50,5 +54,23 @@
   _item.serialNumber = _serialNumberField.text;
   _item.valueInDollars = [_valueField.text integerValue];
 }
+
+- (IBAction)takePicture:(UIBarButtonItem *)sender {
+  UIImagePickerController* imagePicker = [[UIImagePickerController alloc] init];
+  imagePicker.sourceType = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] ? UIImagePickerControllerSourceTypeCamera : UIImagePickerControllerSourceTypePhotoLibrary;
+  imagePicker.delegate = self;
+  
+  [self presentViewController:imagePicker
+                     animated:YES
+                   completion:nil];
+}
+
+#pragma mark: - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+  _imageView.image = info[UIImagePickerControllerOriginalImage];
+  [self dismissViewControllerAnimated:YES
+                           completion:nil];
+}
+
 
 @end

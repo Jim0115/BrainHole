@@ -25,25 +25,21 @@
   self = [self initWithStyle:UITableViewStylePlain];
   self.title = @"Homepwner";
   
+  UIBarButtonItem* bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                       target:self
+                                                                       action:@selector(addNewItem:)];
+  self.navigationItem.rightBarButtonItem = bbi;
+  self.navigationItem.leftBarButtonItem = self.editButtonItem;
   return self;
 }
 
 - (instancetype)initWithStyle:(UITableViewStyle)style {
   if (self = [super initWithStyle:UITableViewStylePlain]) {
-//    for (int i = 0; i < 5; i++) {
-//      [[BNRItemStore sharedStore] createItem];
-//    }
+    //    for (int i = 0; i < 5; i++) {
+    //      [[BNRItemStore sharedStore] createItem];
+    //    }
   }
   return self;
-}
-
-- (UIView *)headerView {
-  if (!_headerView) {
-    [[NSBundle mainBundle] loadNibNamed:@"HeaderView"
-                                  owner:self
-                                options:nil];
-  }
-  return _headerView;
 }
 
 - (void)viewDidLoad {
@@ -63,22 +59,8 @@
 
 #pragma mark - Actions
 
-- (IBAction)toggleEditingMode:(UIButton *)sender {
-  if (self.editing) {
-    [sender setTitle:@"Edit"
-            forState:UIControlStateNormal];
-    [self setEditing:NO
-            animated:YES];
-  } else {
-    [sender setTitle:@"Done"
-            forState:UIControlStateNormal];
-    [self setEditing:YES
-            animated:YES];
-  }
-}
-
 - (IBAction)addNewItem:(UIButton *)sender {
-//  NSInteger lastRow = [self.tableView numberOfRowsInSection:0];
+  //  NSInteger lastRow = [self.tableView numberOfRowsInSection:0];
   
   BNRItem* newItem = [[BNRItemStore sharedStore] createItem];
   NSInteger lastRow = [[[BNRItemStore sharedStore] allItems] indexOfObject:newItem];
@@ -89,7 +71,6 @@
   [self.tableView insertRowsAtIndexPaths:@[indexPath]
                         withRowAnimation:UITableViewRowAnimationMiddle];
 }
-
 
 #pragma mark - tableViewDataSource
 
