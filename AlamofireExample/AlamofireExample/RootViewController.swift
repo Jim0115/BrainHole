@@ -14,16 +14,22 @@ class RootViewController: UITableViewController {
     
     private let cellIdentifier = "RootCell"
     private let segueIdentifier = "showResult"
-    private let urlPrefix = "https://www.httpbin.org"
+    private let urlPrefix = "https://www.httpbin.org/"
     
     private var lastResultDict = [String: Any]()
     
-    let methods = ["/ip"]
+    private let methods = ["ip", "user-agent", "headers", "gzip", "delay/10", "redirect/10"].sorted()
     
     // MARK: - UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard !UIApplication.shared.isNetworkActivityIndicatorVisible else { return }
+        
+        do {
+            if indexPath.row == 0 {
+                URLSession.shared.dataTask(with: URL(string: "https://www.baidu.com")!).resume()
+            }
+        }
         
         let url = urlPrefix + methods[indexPath.row]
         
@@ -37,6 +43,7 @@ class RootViewController: UITableViewController {
                 let alert = UIAlertController(title: "Network Error", message: error.localizedDescription, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Confirm", style: .cancel, handler: nil))
                 self.present(alert, animated: true)
+                tableView.deselectRow(at: indexPath, animated: true)
             } else if let jsonDict = response.result.value as? Dictionary<String, Any> {
                 self.lastResultDict = jsonDict
                 self.performSegue(withIdentifier: self.segueIdentifier, sender: tableView.cellForRow(at: indexPath))

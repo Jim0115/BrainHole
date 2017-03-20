@@ -22,10 +22,21 @@ class DetailViewController: UITableViewController {
     }()
     
     private let cellIdentifier = "resultCell"
+    private let segueIdentifier = "showDetail"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(resultDicts)
+    }
+    
+    // MARK: - UITableViewDelegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard tableView.cellForRow(at: indexPath)!.accessoryType == .none else { return }
+        let (key, result) = resultTuples[indexPath.row]
+        
+        let alert = UIAlertController(title: "", message: "\(key) : \(result)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Confirm", style: .cancel, handler: { _ in tableView.deselectRow(at: indexPath, animated: true) } ))
+        present(alert, animated: true)
     }
     
     // MARK: - UITableViewDataSource
@@ -39,9 +50,10 @@ class DetailViewController: UITableViewController {
         let (key, result) = resultTuples[indexPath.row]
         
         cell.textLabel?.text = key
-        cell.detailTextLabel?.text = "\(result)"
+        
         let hasMoreDetail = result is Array<Any> || result is Dictionary<String, Any>
-        cell.selectionStyle = hasMoreDetail ? .default : .none
+        
+        cell.detailTextLabel?.text = hasMoreDetail ? "" : "\(result)"
         cell.accessoryType = hasMoreDetail ? .disclosureIndicator : .none
         
         return cell
@@ -50,8 +62,13 @@ class DetailViewController: UITableViewController {
     // MARK: - UIStoryBoardSegue
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         guard let cell = sender as? UITableViewCell else { return false }
-        return cell.selectionStyle != .none
+        return cell.accessoryType != .none
     }
 
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == segueIdentifier else { fatalError("Wrong segue identifier") }
+        guard let destination = segue.destination as? DetailViewController else { fatalError("Error destination type") }
+        
+        destination.resultDicts = resultTuples[tableView.indexPath(for: sender as! UITableViewCell)!.row].1 as! Dictionary<String, Any>
+    }
 }
