@@ -28,17 +28,30 @@ class DetailViewController: UITableViewController {
         print(resultDicts)
     }
     
+    // MARK: - UITableViewDataSource
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return resultTuples.count
     }
     
-    // MARK: - UITableViewDataSource
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         
-        cell.textLabel?.text = resultTuples[indexPath.row].0
-        cell.detailTextLabel?.text = "\(resultTuples[indexPath.row].1)"
+        let (key, result) = resultTuples[indexPath.row]
+        
+        cell.textLabel?.text = key
+        cell.detailTextLabel?.text = "\(result)"
+        let hasMoreDetail = result is Array<Any> || result is Dictionary<String, Any>
+        cell.selectionStyle = hasMoreDetail ? .default : .none
+        cell.accessoryType = hasMoreDetail ? .disclosureIndicator : .none
         
         return cell
     }
+    
+    // MARK: - UIStoryBoardSegue
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        guard let cell = sender as? UITableViewCell else { return false }
+        return cell.selectionStyle != .none
+    }
+
+    
 }
