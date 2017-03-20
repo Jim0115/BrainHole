@@ -16,6 +16,8 @@
 
 @property (nonatomic, strong, readonly) NSDate* dateCreated;
 
+@property (nonatomic, copy) NSString* itemKey;
+
 
 - (instancetype)initWithItemName:(NSString *)name
                   valueInDollars:(NSInteger)value

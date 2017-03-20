@@ -39,4 +39,18 @@
   return self;
 }
 
+- (void)setImage:(UIImage *)image forKey:(NSString *)key {
+  _dictionary[key] = image;
+}
+
+- (UIImage *)imageForKey:(NSString *)key {
+  return _dictionary[key];
+}
+
+- (void)deleteImageForKey:(NSString *)key {
+  if (key) {
+    [_dictionary removeObjectForKey:key];
+  }
+}
+
 @end

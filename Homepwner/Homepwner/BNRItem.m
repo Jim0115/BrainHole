@@ -27,6 +27,8 @@
     _valueInDollars = value;
     
     _dateCreated = [NSDate date];
+    
+    _itemKey = [[NSUUID UUID] UUIDString];
   }
   return self;
 }
